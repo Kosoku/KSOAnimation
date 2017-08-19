@@ -83,6 +83,7 @@
         return nil;
     
     _direction = direction;
+    _overlayBackgroundColor = [self.class _defaultOverlayBackgroundColor];
     
     return self;
 }

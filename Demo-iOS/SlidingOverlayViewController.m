@@ -20,29 +20,46 @@
 
 @interface SlidingOverlayViewController () <KDIPickerViewButtonDataSource,KDIPickerViewButtonDelegate,UIViewControllerTransitioningDelegate>
 @property (weak,nonatomic) IBOutlet KDIPickerViewButton *directionButton;
+@property (weak,nonatomic) IBOutlet UIButton *dismissButton;
 
 @property (copy,nonatomic) NSArray<NSNumber *> *directions;
+@property (assign,nonatomic) Direction direction;
 
 - (NSString *)_titleForDirection:(KSOSlidingAnimationControllerDirection)direction;
 @end
 
 @implementation SlidingOverlayViewController
 
+- (UIModalPresentationStyle)modalPresentationStyle {
+    return UIModalPresentationCustom;
+}
+
 - (NSString *)title {
     return self.class.displayTitle;
 }
 
-- (instancetype)init {
+- (instancetype)initForPresenting:(BOOL)presenting direction:(Direction)direction {
     if (!(self = [super init]))
         return nil;
     
-    [self setTransitioningDelegate:self];
+    _direction = direction;
+    
+    if (presenting) {
+        [self setTransitioningDelegate:self];
+    }
     
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.view setBackgroundColor:KDIColorRandomRGB()];
+    [self.view setTintColor:[self.view.backgroundColor KDI_contrastingColor]];
+    
+    if (self.presentingViewController == nil) {
+        [self.dismissButton setHidden:YES];
+    }
     
     [self setDirections:@[@(KSOSlidingAnimationControllerDirectionTop),
                           @(KSOSlidingAnimationControllerDirectionLeft),
@@ -69,13 +86,13 @@
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
-    return [[KSOSlidingAnimationController alloc] initWithDirection:self.directions[[self.directionButton selectedRowInComponent:0]].integerValue presenting:YES];
+    return [[KSOSlidingAnimationController alloc] initWithDirection:(KSOSlidingAnimationControllerDirection)self.direction presenting:YES];
 }
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    return [[KSOSlidingAnimationController alloc] initWithDirection:self.directions[[self.directionButton selectedRowInComponent:0]].integerValue presenting:NO];
+    return [[KSOSlidingAnimationController alloc] initWithDirection:(KSOSlidingAnimationControllerDirection)self.direction presenting:NO];
 }
 - (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source {
-    return [[KSODimmingOverlayPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting direction:self.directions[[self.directionButton selectedRowInComponent:0]].integerValue];
+    return [[KSODimmingOverlayPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting direction:(KSODimmingOverlayPresentationControllerDirection)self.direction];
 }
 
 - (NSString *)_titleForDirection:(KSOSlidingAnimationControllerDirection)direction; {
@@ -92,7 +109,7 @@
 }
 
 - (IBAction)_presentAction:(id)sender {
-    [self presentViewController:[[SlidingOverlayViewController alloc] init] animated:YES completion:nil];
+    [self presentViewController:[[SlidingOverlayViewController alloc] initForPresenting:YES direction:self.directions[[self.directionButton selectedRowInComponent:0]].integerValue] animated:YES completion:nil];
 }
 - (IBAction)_dismissAction:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];

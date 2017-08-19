@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SlidingOverlayViewController">
             <connections>
                 <outlet property="directionButton" destination="cYQ-r3-rxJ" id="fgk-iu-JOP"/>
+                <outlet property="dismissButton" destination="2SX-jn-Ql1" id="XyX-tD-XT8"/>
                 <outlet property="view" destination="iN0-l3-epB" id="oNc-6N-PqZ"/>
             </connections>
         </placeholder>
