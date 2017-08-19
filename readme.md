@@ -7,6 +7,8 @@
 
 *KSOAnimation* is a collection of animations and transitions that extend the `UIKit` framework.
 
+![iOS](screenshots/iOS.gif)
+
 ### Installation
 
 You can install *KSOAnimation* using [cocoapods](https://cocoapods.org/), [Carthage](https://github.com/Carthage/Carthage), or as a framework. When installing as a framework, ensure you also link to [Stanley](https://github.com/Kosoku/Stanley) as *KSOAnimation* relies on it.
