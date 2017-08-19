@@ -5,7 +5,7 @@
 [![Platform](http://img.shields.io/cocoapods/p/KSOAnimation.svg)]()
 [![License](http://img.shields.io/cocoapods/l/KSOAnimation.svg)](https://github.com/Kosoku/KSOAnimation/blob/master/license.txt)
 
-*KSOAnimation* is a collection of animations and transitions that extends the `UIKit` framework.
+*KSOAnimation* is a collection of animations and transitions that extend the `UIKit` framework.
 
 ### Installation
 
