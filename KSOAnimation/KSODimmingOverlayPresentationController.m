@@ -66,10 +66,10 @@
     
     switch (self.direction) {
         case KSODimmingOverlayPresentationControllerDirectionRight:
-            retval.origin.x = CGRectGetWidth(self.containerView.frame) * (1.0 - self.childContentContainerWidthPercentage);
+            retval.origin.x = CGRectGetWidth(self.containerView.frame) * (1.0 - self.childContentContainerSizePercentage);
             break;
         case KSODimmingOverlayPresentationControllerDirectionBottom:
-            retval.origin.y = CGRectGetHeight(self.containerView.frame) * (1.0 - self.childContentContainerWidthPercentage);
+            retval.origin.y = CGRectGetHeight(self.containerView.frame) * (1.0 - self.childContentContainerSizePercentage);
             break;
         default:
             break;
@@ -83,11 +83,11 @@
     switch (self.direction) {
         case KSODimmingOverlayPresentationControllerDirectionTop:
         case KSODimmingOverlayPresentationControllerDirectionBottom:
-            retval.height *= self.childContentContainerWidthPercentage;
+            retval.height *= self.childContentContainerSizePercentage;
             break;
         case KSODimmingOverlayPresentationControllerDirectionLeft:
         case KSODimmingOverlayPresentationControllerDirectionRight:
-            retval.width *= self.childContentContainerWidthPercentage;
+            retval.width *= self.childContentContainerSizePercentage;
             break;
         default:
             break;
@@ -101,7 +101,7 @@
         return nil;
     
     _direction = direction;
-    _childContentContainerWidthPercentage = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.33 : 0.85;
+    _childContentContainerSizePercentage = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.33 : 0.85;
     _overlayBackgroundColor = [self.class _defaultOverlayBackgroundColor];
     
     return self;

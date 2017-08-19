@@ -17,18 +17,56 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ Typedef for possible presentation directions.
+ */
 typedef NS_ENUM(NSInteger,KSODimmingOverlayPresentationControllerDirection) {
+    /**
+     The overlay will be visible on the bottom.
+     */
     KSODimmingOverlayPresentationControllerDirectionTop,
+    /**
+     The overlay will be visible on the right.
+     */
     KSODimmingOverlayPresentationControllerDirectionLeft,
+    /**
+     The overlay will be visible on the top.
+     */
     KSODimmingOverlayPresentationControllerDirectionBottom,
+    /**
+     The overlay will be visible on the left.
+     */
     KSODimmingOverlayPresentationControllerDirectionRight
 };
 
+/**
+ KSODimmingOverlayPresentationController presents a view controller with a dimming view inserted below the presented view controller with its background color set to overlayBackgroundColor.
+ */
 @interface KSODimmingOverlayPresentationController : UIPresentationController
 
-@property (assign,nonatomic) CGFloat childContentContainerWidthPercentage;
+/**
+ The percentage of width or height reserved for the overlay view. It is applied as a percentage of the width or height of the entire screen.
+ 
+ The default is 0.33 on an iPad and 0.85 on an iPhone.
+ */
+@property (assign,nonatomic) CGFloat childContentContainerSizePercentage;
+/**
+ The background color of the overlay view.
+ 
+ The default is [UIColor colorWithWhite:0 alpha:0.5].
+ */
 @property (strong,nonatomic,null_resettable) UIColor *overlayBackgroundColor;
 
+/**
+ The designated initializer.
+ 
+ The additional direction parameter indicates from which direction the presentedViewController is being presented from.
+ 
+ @param presentedViewController The view controller being presented
+ @param presentingViewController The view controller that is presenting
+ @param direction The direction from which the presentedViewController is being presented from
+ @return The initialized instance
+ */
 - (instancetype)initWithPresentedViewController:(UIViewController *)presentedViewController presentingViewController:(nullable UIViewController *)presentingViewController direction:(KSODimmingOverlayPresentationControllerDirection)direction NS_DESIGNATED_INITIALIZER;
 
 @end

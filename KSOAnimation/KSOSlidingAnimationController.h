@@ -15,15 +15,42 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ Typedef for possible animation directions.
+ */
 typedef NS_ENUM(NSInteger,KSOSlidingAnimationControllerDirection) {
+    /**
+     The animation starts from the top.
+     */
     KSOSlidingAnimationControllerDirectionTop,
+    /**
+     The animation starts from the left.
+     */
     KSOSlidingAnimationControllerDirectionLeft,
+    /**
+     The animation starts from the bottom.
+     */
     KSOSlidingAnimationControllerDirectionBottom,
+    /**
+     The animation starts from the right.
+     */
     KSOSlidingAnimationControllerDirectionRight
 };
 
+/**
+ KSOSlidingAnimationController presents a view controller by sliding it from offscreen to its final position based on the provided direction parameter.
+ */
 @interface KSOSlidingAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
 
+/**
+ The designated initializer.
+ 
+ The direction indicates from which direction the view controller is being presented from.
+ 
+ @param direction The direction to present from
+ @param presenting Whether the view controller is being presented or dismissed
+ @return The initialized instance
+ */
 - (instancetype)initWithDirection:(KSOSlidingAnimationControllerDirection)direction presenting:(BOOL)presenting NS_DESIGNATED_INITIALIZER;
 
 - (instancetype)init NS_UNAVAILABLE;
