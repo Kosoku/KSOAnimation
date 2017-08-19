@@ -8,12 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		079CA98F1F48D254009E4690 /* KSOAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 079CA98D1F48D254009E4690 /* KSOAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		079CA99C1F48D3FB009E4690 /* KSODimmingOverlayPresentationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 079CA9981F48D3FB009E4690 /* KSODimmingOverlayPresentationController.h */; };
+		079CA99D1F48D3FB009E4690 /* KSODimmingOverlayPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079CA9991F48D3FB009E4690 /* KSODimmingOverlayPresentationController.m */; };
+		079CA99E1F48D3FB009E4690 /* KSOSlidingAnimationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 079CA99A1F48D3FB009E4690 /* KSOSlidingAnimationController.h */; };
+		079CA99F1F48D3FB009E4690 /* KSOSlidingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079CA99B1F48D3FB009E4690 /* KSOSlidingAnimationController.m */; };
+		07C3E5A41F48D6F700BA0E85 /* Stanley.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C3E5A31F48D6F700BA0E85 /* Stanley.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		079CA98A1F48D254009E4690 /* KSOAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KSOAnimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		079CA98D1F48D254009E4690 /* KSOAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSOAnimation.h; sourceTree = "<group>"; };
-		079CA98E1F48D254009E4690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		079CA98E1F48D254009E4690 /* KSOAnimation-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KSOAnimation-iOS-Info.plist"; sourceTree = "<group>"; };
+		079CA9951F48D2F6009E4690 /* KSOAnimation-Info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KSOAnimation-Info.h"; sourceTree = "<group>"; };
+		079CA9981F48D3FB009E4690 /* KSODimmingOverlayPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSODimmingOverlayPresentationController.h; sourceTree = "<group>"; };
+		079CA9991F48D3FB009E4690 /* KSODimmingOverlayPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSODimmingOverlayPresentationController.m; sourceTree = "<group>"; };
+		079CA99A1F48D3FB009E4690 /* KSOSlidingAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSOSlidingAnimationController.h; sourceTree = "<group>"; };
+		079CA99B1F48D3FB009E4690 /* KSOSlidingAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSOSlidingAnimationController.m; sourceTree = "<group>"; };
+		07C3E5A31F48D6F700BA0E85 /* Stanley.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stanley.framework; path = "Vendor/Stanley/build/Debug-iphoneos/Stanley.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07C3E5A41F48D6F700BA0E85 /* Stanley.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,6 +44,7 @@
 			children = (
 				079CA98C1F48D254009E4690 /* KSOAnimation */,
 				079CA98B1F48D254009E4690 /* Products */,
+				07C3E5A21F48D6F700BA0E85 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,9 +60,38 @@
 			isa = PBXGroup;
 			children = (
 				079CA98D1F48D254009E4690 /* KSOAnimation.h */,
-				079CA98E1F48D254009E4690 /* Info.plist */,
+				079CA9971F48D38A009E4690 /* Source */,
+				079CA9961F48D37D009E4690 /* Supporting Files */,
 			);
 			path = KSOAnimation;
+			sourceTree = "<group>";
+		};
+		079CA9961F48D37D009E4690 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				079CA98E1F48D254009E4690 /* KSOAnimation-iOS-Info.plist */,
+				079CA9951F48D2F6009E4690 /* KSOAnimation-Info.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		079CA9971F48D38A009E4690 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				079CA9981F48D3FB009E4690 /* KSODimmingOverlayPresentationController.h */,
+				079CA9991F48D3FB009E4690 /* KSODimmingOverlayPresentationController.m */,
+				079CA99A1F48D3FB009E4690 /* KSOSlidingAnimationController.h */,
+				079CA99B1F48D3FB009E4690 /* KSOSlidingAnimationController.m */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		07C3E5A21F48D6F700BA0E85 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07C3E5A31F48D6F700BA0E85 /* Stanley.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,6 +101,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				079CA99E1F48D3FB009E4690 /* KSOSlidingAnimationController.h in Headers */,
+				079CA99C1F48D3FB009E4690 /* KSODimmingOverlayPresentationController.h in Headers */,
 				079CA98F1F48D254009E4690 /* KSOAnimation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,9 +110,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		079CA9891F48D254009E4690 /* KSOAnimation */ = {
+		079CA9891F48D254009E4690 /* KSOAnimation-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 079CA9921F48D254009E4690 /* Build configuration list for PBXNativeTarget "KSOAnimation" */;
+			buildConfigurationList = 079CA9921F48D254009E4690 /* Build configuration list for PBXNativeTarget "KSOAnimation-iOS" */;
 			buildPhases = (
 				079CA9851F48D254009E4690 /* Sources */,
 				079CA9861F48D254009E4690 /* Frameworks */,
@@ -79,7 +123,7 @@
 			);
 			dependencies = (
 			);
-			name = KSOAnimation;
+			name = "KSOAnimation-iOS";
 			productName = KSOAnimation;
 			productReference = 079CA98A1F48D254009E4690 /* KSOAnimation.framework */;
 			productType = "com.apple.product-type.framework";
@@ -112,7 +156,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				079CA9891F48D254009E4690 /* KSOAnimation */,
+				079CA9891F48D254009E4690 /* KSOAnimation-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -132,6 +176,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				079CA99F1F48D3FB009E4690 /* KSOSlidingAnimationController.m in Sources */,
+				079CA99D1F48D3FB009E4690 /* KSODimmingOverlayPresentationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,11 +291,18 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = KSOAnimation/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendor/Stanley/build/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/KSOAnimation/KSOAnimation-iOS-Info.plist";
+				INFOPLIST_PREFIX_HEADER = "$(SRCROOT)/KSOAnimation/KSOAnimation-Info.h";
+				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kosoku.KSOAnimation;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kosoku.ksoanimation;
+				PRODUCT_NAME = KSOAnimation;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -263,11 +316,18 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = KSOAnimation/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendor/Stanley/build/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/KSOAnimation/KSOAnimation-iOS-Info.plist";
+				INFOPLIST_PREFIX_HEADER = "$(SRCROOT)/KSOAnimation/KSOAnimation-Info.h";
+				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kosoku.KSOAnimation;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kosoku.ksoanimation;
+				PRODUCT_NAME = KSOAnimation;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -284,13 +344,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		079CA9921F48D254009E4690 /* Build configuration list for PBXNativeTarget "KSOAnimation" */ = {
+		079CA9921F48D254009E4690 /* Build configuration list for PBXNativeTarget "KSOAnimation-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				079CA9931F48D254009E4690 /* Debug */,
 				079CA9941F48D254009E4690 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
