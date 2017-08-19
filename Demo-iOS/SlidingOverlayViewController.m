@@ -18,7 +18,7 @@
 #import <KSOAnimation/KSOAnimation.h>
 #import <Ditko/Ditko.h>
 
-@interface SlidingOverlayViewController () <KDIPickerViewButtonDataSource,UIViewControllerTransitioningDelegate>
+@interface SlidingOverlayViewController () <KDIPickerViewButtonDataSource,KDIPickerViewButtonDelegate,UIViewControllerTransitioningDelegate>
 @property (weak,nonatomic) IBOutlet KDIPickerViewButton *directionButton;
 
 @property (copy,nonatomic) NSArray<NSNumber *> *directions;
@@ -50,6 +50,7 @@
                           @(KSOSlidingAnimationControllerDirectionRight)]];
     
     [self.directionButton setDataSource:self];
+    [self.directionButton setDelegate:self];
 }
 
 + (NSString *)displayTitle {
@@ -61,6 +62,10 @@
 }
 - (NSString *)pickerViewButton:(KDIPickerViewButton *)pickerViewButton titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     return [self _titleForDirection:self.directions[row].integerValue];
+}
+
+- (NSString *)pickerViewButton:(KDIPickerViewButton *)pickerViewButton titleForSelectedRows:(NSArray<NSNumber *> *)selectedRows {
+    return [NSString stringWithFormat:@"Direction: %@",[self _titleForDirection:self.directions[selectedRows.firstObject.integerValue].integerValue]];
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
