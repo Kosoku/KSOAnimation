@@ -1,6 +1,6 @@
 //
 //  KSOSlidingAnimationController.m
-//  Collaborate
+//  KSOAnimation
 //
 //  Created by William Towe on 7/27/17.
 //  Copyright © 2017 Kosoku Interactive, LLC. All rights reserved.

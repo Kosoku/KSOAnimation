@@ -1,6 +1,6 @@
 //
 //  KSODimmingOverlayPresentationController.h
-//  Collaborate
+//  KSOAnimation
 //
 //  Created by William Towe on 7/27/17.
 //  Copyright © 2017 Kosoku Interactive, LLC. All rights reserved.
@@ -26,9 +26,10 @@ typedef NS_ENUM(NSInteger,KSODimmingOverlayPresentationControllerDirection) {
 
 @interface KSODimmingOverlayPresentationController : UIPresentationController
 
+@property (assign,nonatomic) CGFloat childContentContainerWidthPercentage;
 @property (strong,nonatomic,null_resettable) UIColor *overlayBackgroundColor;
 
-- (instancetype)initWithPresentedViewController:(UIViewController *)presentedViewController presentingViewController:(nullable UIViewController *)presentingViewController direction:(KSODimmingOverlayPresentationControllerDirection)direction;
+- (instancetype)initWithPresentedViewController:(UIViewController *)presentedViewController presentingViewController:(nullable UIViewController *)presentingViewController direction:(KSODimmingOverlayPresentationControllerDirection)direction NS_DESIGNATED_INITIALIZER;
 
 @end
 

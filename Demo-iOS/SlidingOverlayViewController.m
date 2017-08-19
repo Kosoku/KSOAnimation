@@ -109,9 +109,11 @@
 }
 
 - (IBAction)_presentAction:(id)sender {
+    [self.view endEditing:YES];
     [self presentViewController:[[SlidingOverlayViewController alloc] initForPresenting:YES direction:self.directions[[self.directionButton selectedRowInComponent:0]].integerValue] animated:YES completion:nil];
 }
 - (IBAction)_dismissAction:(id)sender {
+    [self.view endEditing:YES];
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 

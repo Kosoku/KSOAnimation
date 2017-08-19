@@ -1,6 +1,6 @@
 //
 //  KSODimmingOverlayPresentationController.m
-//  Collaborate
+//  KSOAnimation
 //
 //  Created by William Towe on 7/27/17.
 //  Copyright © 2017 Kosoku Interactive, LLC. All rights reserved.
@@ -21,7 +21,6 @@
 @property (strong,nonatomic) UIView *dimmingView;
 
 @property (assign,nonatomic) KSODimmingOverlayPresentationControllerDirection direction;
-@property (readonly,nonatomic) CGFloat childContentContainerWidthPercentage;
 
 + (UIColor *)_defaultOverlayBackgroundColor;
 @end
@@ -29,6 +28,10 @@
 @implementation KSODimmingOverlayPresentationController
 
 #pragma mark *** Subclass Overrides ***
+- (instancetype)initWithPresentedViewController:(UIViewController *)presentedViewController presentingViewController:(UIViewController *)presentingViewController {
+    return [self initWithPresentedViewController:presentedViewController presentingViewController:presentingViewController direction:KSODimmingOverlayPresentationControllerDirectionTop];
+}
+
 - (void)presentationTransitionWillBegin {
     [self.containerView insertSubview:self.dimmingView atIndex:0];
     
@@ -75,7 +78,22 @@
     return retval;
 }
 - (CGSize)sizeForChildContentContainer:(id<UIContentContainer>)container withParentContainerSize:(CGSize)parentSize {
-    return CGSizeMake(parentSize.width * self.childContentContainerWidthPercentage, parentSize.height);
+    CGSize retval = parentSize;
+    
+    switch (self.direction) {
+        case KSODimmingOverlayPresentationControllerDirectionTop:
+        case KSODimmingOverlayPresentationControllerDirectionBottom:
+            retval.height *= self.childContentContainerWidthPercentage;
+            break;
+        case KSODimmingOverlayPresentationControllerDirectionLeft:
+        case KSODimmingOverlayPresentationControllerDirectionRight:
+            retval.width *= self.childContentContainerWidthPercentage;
+            break;
+        default:
+            break;
+    }
+    
+    return retval;
 }
 #pragma mark *** Public Methods ***
 - (instancetype)initWithPresentedViewController:(UIViewController *)presentedViewController presentingViewController:(UIViewController *)presentingViewController direction:(KSODimmingOverlayPresentationControllerDirection)direction {
@@ -83,6 +101,7 @@
         return nil;
     
     _direction = direction;
+    _childContentContainerWidthPercentage = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.33 : 0.85;
     _overlayBackgroundColor = [self.class _defaultOverlayBackgroundColor];
     
     return self;
@@ -115,9 +134,6 @@
         [self setDimmingView:_dimmingView];
     }
     return _dimmingView;
-}
-- (CGFloat)childContentContainerWidthPercentage {
-    return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.33 : 0.85;
 }
 #pragma mark Actions
 - (IBAction)_tapGestureRecognizerAction:(id)sender {

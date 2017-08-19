@@ -1,6 +1,6 @@
 //
 //  KSOSlidingAnimationController.h
-//  Collaborate
+//  KSOAnimation
 //
 //  Created by William Towe on 7/27/17.
 //  Copyright © 2017 Kosoku Interactive, LLC. All rights reserved.
@@ -24,6 +24,9 @@ typedef NS_ENUM(NSInteger,KSOSlidingAnimationControllerDirection) {
 
 @interface KSOSlidingAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
 
-- (instancetype)initWithDirection:(KSOSlidingAnimationControllerDirection)direction presenting:(BOOL)presenting;
+- (instancetype)initWithDirection:(KSOSlidingAnimationControllerDirection)direction presenting:(BOOL)presenting NS_DESIGNATED_INITIALIZER;
+
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
 
 @end
