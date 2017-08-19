@@ -1,5 +1,5 @@
 //
-//  KSOAnimation.h
+//  DetailViewController.h
 //  KSOAnimation
 //
 //  Created by William Towe on 8/19/17.
@@ -13,17 +13,9 @@
 //
 //  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-//! Project version number for KSOAnimation.
-FOUNDATION_EXPORT double KSOAnimationVersionNumber;
-
-//! Project version string for KSOAnimation.
-FOUNDATION_EXPORT const unsigned char KSOAnimationVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <KSOAnimation/PublicHeader.h>
-
-
-#import <KSOAnimation/KSODimmingOverlayPresentationController.h>
-
-#import <KSOAnimation/KSOSlidingAnimationController.h>
+@protocol DetailViewController <NSObject>
+@required
+@property (class,readonly,nonatomic) NSString *displayTitle;
+@end

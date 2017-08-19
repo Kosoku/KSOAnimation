@@ -1,6 +1,6 @@
 //
-//  KSOAnimation.h
-//  KSOAnimation
+//  AppDelegate.m
+//  Demo-iOS
 //
 //  Created by William Towe on 8/19/17.
 //  Copyright © 2017 Kosoku Interactive, LLC. All rights reserved.
@@ -13,17 +13,21 @@
 //
 //  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+#import "ViewController.h"
 
-//! Project version number for KSOAnimation.
-FOUNDATION_EXPORT double KSOAnimationVersionNumber;
+@interface AppDelegate ()
 
-//! Project version string for KSOAnimation.
-FOUNDATION_EXPORT const unsigned char KSOAnimationVersionString[];
+@end
 
-// In this header, you should import all the public headers of your framework using statements like #import <KSOAnimation/PublicHeader.h>
+@implementation AppDelegate
 
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self setWindow:[[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds]];
+    [self.window setRootViewController:[[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]]];
+    [self.window makeKeyAndVisible];
+    
+    return YES;
+}
 
-#import <KSOAnimation/KSODimmingOverlayPresentationController.h>
-
-#import <KSOAnimation/KSOSlidingAnimationController.h>
+@end
