@@ -26,6 +26,6 @@ typedef NS_ENUM(NSInteger,Direction) {
 
 @interface SlidingOverlayViewController : UIViewController <DetailViewController>
 
-- (instancetype)initForPresenting:(BOOL)presenting direction:(Direction)direction;
+- (instancetype)initForPresenting:(BOOL)presenting custom:(BOOL)custom direction:(Direction)direction;
 
 @end

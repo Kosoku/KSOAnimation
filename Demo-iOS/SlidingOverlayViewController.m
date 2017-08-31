@@ -21,9 +21,12 @@
 @interface SlidingOverlayViewController () <KDIPickerViewButtonDataSource,KDIPickerViewButtonDelegate,UIViewControllerTransitioningDelegate>
 @property (weak,nonatomic) IBOutlet KDIPickerViewButton *directionButton;
 @property (weak,nonatomic) IBOutlet UIButton *dismissButton;
+@property (weak,nonatomic) IBOutlet UILabel *customLabel;
+@property (weak,nonatomic) IBOutlet UISwitch *switchControl;
 
 @property (copy,nonatomic) NSArray<NSNumber *> *directions;
 @property (assign,nonatomic) Direction direction;
+@property (assign,nonatomic) BOOL shouldUseCustomPresentation;
 
 - (NSString *)_titleForDirection:(KSOSlidingAnimationControllerDirection)direction;
 @end
@@ -31,20 +34,23 @@
 @implementation SlidingOverlayViewController
 
 - (UIModalPresentationStyle)modalPresentationStyle {
-    return UIModalPresentationCustom;
+    return self.shouldUseCustomPresentation ? UIModalPresentationCustom : UIModalPresentationFormSheet;
 }
 
 - (NSString *)title {
     return self.class.displayTitle;
 }
 
-- (instancetype)initForPresenting:(BOOL)presenting direction:(Direction)direction {
+- (instancetype)initForPresenting:(BOOL)presenting custom:(BOOL)custom direction:(Direction)direction {
     if (!(self = [super init]))
         return nil;
     
     _direction = direction;
+    _shouldUseCustomPresentation = custom;
     
-    if (presenting) {
+    if (presenting &&
+        custom) {
+        
         [self setTransitioningDelegate:self];
     }
     
@@ -55,11 +61,11 @@
     [super viewDidLoad];
     
     [self.view setBackgroundColor:KDIColorRandomRGB()];
-    [self.view setTintColor:[self.view.backgroundColor KDI_contrastingColor]];
     
-    if (self.presentingViewController == nil) {
-        [self.dismissButton setHidden:YES];
-    }
+    UIColor *contrastingColor = [self.view.backgroundColor KDI_contrastingColor];
+    
+    [self.view setTintColor:contrastingColor];
+    [self.customLabel setTextColor:contrastingColor];
     
     [self setDirections:@[@(KSOSlidingAnimationControllerDirectionTop),
                           @(KSOSlidingAnimationControllerDirectionLeft),
@@ -110,7 +116,7 @@
 
 - (IBAction)_presentAction:(id)sender {
     [self.view endEditing:YES];
-    [self presentViewController:[[SlidingOverlayViewController alloc] initForPresenting:YES direction:self.directions[[self.directionButton selectedRowInComponent:0]].integerValue] animated:YES completion:nil];
+    [self presentViewController:[[SlidingOverlayViewController alloc] initForPresenting:YES custom:self.switchControl.isOn direction:self.directions[[self.directionButton selectedRowInComponent:0]].integerValue] animated:YES completion:nil];
 }
 - (IBAction)_dismissAction:(id)sender {
     [self.view endEditing:YES];
