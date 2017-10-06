@@ -43,6 +43,13 @@ typedef NS_ENUM(NSInteger,KSOSlidingAnimationControllerDirection) {
 @interface KSOSlidingAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
 
 /**
+ Set and get the duration of the animation.
+ 
+ The default is 0.28 seconds.
+ */
+@property (assign,nonatomic) NSTimeInterval animationDuration;
+
+/**
  The designated initializer.
  
  The direction indicates from which direction the view controller is being presented from.

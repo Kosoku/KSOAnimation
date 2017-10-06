@@ -25,7 +25,7 @@
 @implementation KSOSlidingAnimationController
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
-    return 0.33;
+    return self.animationDuration;
 }
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
     UIViewController *viewController = [transitionContext viewControllerForKey:self.isPresenting ? UITransitionContextToViewControllerKey : UITransitionContextFromViewControllerKey];
@@ -68,6 +68,7 @@
     if (!(self = [super init]))
         return nil;
     
+    _animationDuration = 0.28;
     _direction = direction;
     _presenting = presenting;
     
