@@ -22,11 +22,9 @@ KSOAnimation is a collection of animations and transitions that extend the `UIKi
                        DESC
 
   s.homepage         = 'https://github.com/Kosoku/KSOAnimation'
-  # s.screenshots      = ['https://github.com/Kosoku/Ditko/raw/master/screenshots/iOS-1.png','https://github.com/Kosoku/Ditko/raw/master/screenshots/iOS-2.png','https://github.com/Kosoku/Ditko/raw/master/screenshots/iOS-3.png']
   s.license          = { :type => 'BSD', :file => 'license.txt' }
   s.author           = { 'William Towe' => 'willbur1984@gmail.com' }
   s.source           = { :git => 'https://github.com/Kosoku/KSOAnimation.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
   
@@ -34,6 +32,11 @@ KSOAnimation is a collection of animations and transitions that extend the `UIKi
 
   s.source_files = 'KSOAnimation/**/*.{h,m}'
   s.exclude_files = 'KSOAnimation/KSOAnimation-Info.h'
+  s.private_header_files = 'KSOAnimation/Private/*.h'
+  
+  s.resource_bundles = {
+    'KSOAnimation' => ['KSOAnimation/**/*.{lproj}']
+  }
 
   s.ios.frameworks = 'UIKit'
   
