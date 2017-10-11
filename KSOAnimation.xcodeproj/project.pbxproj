@@ -12,6 +12,9 @@
 		079CA99D1F48D3FB009E4690 /* KSODimmingOverlayPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079CA9991F48D3FB009E4690 /* KSODimmingOverlayPresentationController.m */; };
 		079CA99E1F48D3FB009E4690 /* KSOSlidingAnimationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 079CA99A1F48D3FB009E4690 /* KSOSlidingAnimationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		079CA99F1F48D3FB009E4690 /* KSOSlidingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079CA99B1F48D3FB009E4690 /* KSOSlidingAnimationController.m */; };
+		07B503B61F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B503B41F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		07B503B71F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B503B51F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.m */; };
+		07B503BB1F8EA07500EEDA0F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07B503B91F8EA07500EEDA0F /* Localizable.strings */; };
 		07C3E5A41F48D6F700BA0E85 /* Stanley.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C3E5A31F48D6F700BA0E85 /* Stanley.framework */; };
 		07D989171F48DA2500C2FA12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D989161F48DA2500C2FA12 /* main.m */; };
 		07D9891A1F48DA2500C2FA12 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D989191F48DA2500C2FA12 /* AppDelegate.m */; };
@@ -66,6 +69,10 @@
 		079CA9991F48D3FB009E4690 /* KSODimmingOverlayPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSODimmingOverlayPresentationController.m; sourceTree = "<group>"; };
 		079CA99A1F48D3FB009E4690 /* KSOSlidingAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSOSlidingAnimationController.h; sourceTree = "<group>"; };
 		079CA99B1F48D3FB009E4690 /* KSOSlidingAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSOSlidingAnimationController.m; sourceTree = "<group>"; };
+		07B503B41F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSBundle+KSOAnimationPrivateExtensions.h"; path = "Private/NSBundle+KSOAnimationPrivateExtensions.h"; sourceTree = "<group>"; };
+		07B503B51F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+KSOAnimationPrivateExtensions.m"; path = "Private/NSBundle+KSOAnimationPrivateExtensions.m"; sourceTree = "<group>"; };
+		07B503BA1F8EA07500EEDA0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		07B503BC1F8EA08100EEDA0F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		07C3E5A31F48D6F700BA0E85 /* Stanley.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stanley.framework; path = "Vendor/Stanley/build/Debug-iphoneos/Stanley.framework"; sourceTree = "<group>"; };
 		07D989131F48DA2500C2FA12 /* Demo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D989161F48DA2500C2FA12 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -142,6 +149,7 @@
 			children = (
 				079CA98E1F48D254009E4690 /* KSOAnimation-iOS-Info.plist */,
 				079CA9951F48D2F6009E4690 /* KSOAnimation-Info.h */,
+				07B503B91F8EA07500EEDA0F /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -153,6 +161,8 @@
 				079CA9991F48D3FB009E4690 /* KSODimmingOverlayPresentationController.m */,
 				079CA99A1F48D3FB009E4690 /* KSOSlidingAnimationController.h */,
 				079CA99B1F48D3FB009E4690 /* KSOSlidingAnimationController.m */,
+				07B503B41F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.h */,
+				07B503B51F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -202,6 +212,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B503B61F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.h in Headers */,
 				079CA99E1F48D3FB009E4690 /* KSOSlidingAnimationController.h in Headers */,
 				079CA99C1F48D3FB009E4690 /* KSODimmingOverlayPresentationController.h in Headers */,
 				079CA98F1F48D254009E4690 /* KSOAnimation.h in Headers */,
@@ -215,6 +226,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 079CA9921F48D254009E4690 /* Build configuration list for PBXNativeTarget "KSOAnimation-iOS" */;
 			buildPhases = (
+				07B503B81F8E9F2A00EEDA0F /* genstrings */,
 				079CA9851F48D254009E4690 /* Sources */,
 				079CA9861F48D254009E4690 /* Frameworks */,
 				079CA9871F48D254009E4690 /* Headers */,
@@ -276,6 +288,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 079CA9801F48D254009E4690;
 			productRefGroup = 079CA98B1F48D254009E4690 /* Products */;
@@ -293,6 +306,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B503BB1F8EA07500EEDA0F /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,12 +322,30 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		07B503B81F8E9F2A00EEDA0F /* genstrings */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = genstrings;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = scripts/./genstrings.sh;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		079CA9851F48D254009E4690 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				079CA99F1F48D3FB009E4690 /* KSOSlidingAnimationController.m in Sources */,
+				07B503B71F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.m in Sources */,
 				079CA99D1F48D3FB009E4690 /* KSODimmingOverlayPresentationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +372,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		07B503B91F8EA07500EEDA0F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07B503BA1F8EA07500EEDA0F /* en */,
+				07B503BC1F8EA08100EEDA0F /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		07D989231F48DA2500C2FA12 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -363,6 +404,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -415,6 +457,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -559,6 +602,7 @@
 				07D989281F48DA2500C2FA12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

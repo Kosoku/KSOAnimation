@@ -14,11 +14,12 @@
 //  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "KSODimmingOverlayPresentationController.h"
+#import "NSBundle+KSOAnimationPrivateExtensions.h"
 
 #import <Stanley/Stanley.h>
 
 @interface KSODimmingOverlayPresentationController ()
-@property (strong,nonatomic) UIView *dimmingView;
+@property (strong,nonatomic) UIButton *dimmingView;
 
 @property (assign,nonatomic) KSODimmingOverlayPresentationControllerDirection direction;
 
@@ -33,6 +34,16 @@
 }
 
 - (void)presentationTransitionWillBegin {
+    if (self.dimmingView == nil) {
+        [self setDimmingView:[[UIButton alloc] initWithFrame:CGRectZero]];
+        [self.dimmingView setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self.dimmingView setBackgroundColor:self.overlayBackgroundColor];
+        [self.dimmingView setAlpha:0.0];
+        [self.dimmingView addTarget:self action:@selector(_dimmingViewAction:) forControlEvents:UIControlEventTouchUpInside];
+        [self.dimmingView setAccessibilityLabel:NSLocalizedStringWithDefaultValue(@"com.kosoku.ksoanimation.accessibility.label.dismiss", nil, [NSBundle KSO_animationFrameworkBundle], @"Dismiss", @"dismiss accessibility label")];
+        [self.dimmingView setAccessibilityHint:NSLocalizedStringWithDefaultValue(@"com.kosoku.ksoanimation.accessibility.hint.dismiss", nil, [NSBundle KSO_animationFrameworkBundle], @"Dismiss the presented view", @"dismiss accessibility hint")];
+    }
+    
     [self.containerView insertSubview:self.dimmingView atIndex:0];
     
     [NSLayoutConstraint activateConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:0 metrics:nil views:@{@"view": self.dimmingView}]];
@@ -53,7 +64,7 @@
 }
 - (void)dismissalTransitionDidEnd:(BOOL)completed {
     if (completed) {
-        [_dimmingView removeFromSuperview];
+        [self.dimmingView removeFromSuperview];
     }
 }
 
@@ -114,29 +125,8 @@
 + (UIColor *)_defaultOverlayBackgroundColor; {
     return [UIColor colorWithWhite:0 alpha:0.5];
 }
-#pragma mark Properties
-- (UIView *)dimmingView {
-    if (_dimmingView == nil) {
-        _dimmingView = [[UIView alloc] initWithFrame:CGRectZero];
-        [_dimmingView setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [_dimmingView setBackgroundColor:self.overlayBackgroundColor];
-        [_dimmingView setAlpha:0];
-        kstWeakify(self);
-        [_dimmingView addGestureRecognizer:({
-            kstStrongify(self);
-            UITapGestureRecognizer *retval = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(_tapGestureRecognizerAction:)];
-            
-            [retval setNumberOfTapsRequired:1];
-            
-            retval;
-        })];
-        
-        [self setDimmingView:_dimmingView];
-    }
-    return _dimmingView;
-}
 #pragma mark Actions
-- (IBAction)_tapGestureRecognizerAction:(id)sender {
+- (IBAction)_dimmingViewAction:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
