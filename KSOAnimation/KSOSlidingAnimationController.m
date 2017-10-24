@@ -68,7 +68,7 @@
     if (!(self = [super init]))
         return nil;
     
-    _animationDuration = 0.28;
+    _animationDuration = 0.25;
     _direction = direction;
     _presenting = presenting;
     
