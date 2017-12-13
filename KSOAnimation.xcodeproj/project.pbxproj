@@ -578,7 +578,7 @@
 				DEVELOPMENT_TEAM = C6AZ27TEW2;
 				INFOPLIST_FILE = "Demo-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.Demo-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.KSOAnimation.Demo-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -590,7 +590,7 @@
 				DEVELOPMENT_TEAM = C6AZ27TEW2;
 				INFOPLIST_FILE = "Demo-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.Demo-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.KSOAnimation.Demo-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
