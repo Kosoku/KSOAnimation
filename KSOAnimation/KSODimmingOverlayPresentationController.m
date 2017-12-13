@@ -46,6 +46,8 @@
     
     [self.containerView insertSubview:self.dimmingView atIndex:0];
     
+    [self.containerView setAccessibilityElements:@[self.presentedView,self.dimmingView]];
+    
     [NSLayoutConstraint activateConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:0 metrics:nil views:@{@"view": self.dimmingView}]];
     [NSLayoutConstraint activateConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|" options:0 metrics:nil views:@{@"view": self.dimmingView}]];
     
@@ -54,6 +56,11 @@
         kstStrongify(self);
         [self.dimmingView setAlpha:1];
     } completion:nil];
+}
+- (void)presentationTransitionDidEnd:(BOOL)completed {
+    if (!completed) {
+        [self.dimmingView removeFromSuperview];
+    }
 }
 - (void)dismissalTransitionWillBegin {
     kstWeakify(self);
