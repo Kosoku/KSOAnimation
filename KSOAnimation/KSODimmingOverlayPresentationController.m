@@ -19,7 +19,8 @@
 #import <Stanley/Stanley.h>
 
 @interface KSODimmingOverlayPresentationController ()
-@property (strong,nonatomic) UIButton *dimmingView;
+@property (strong,nonatomic) UIView *dimmingView;
+@property (strong,nonatomic) UIButton *dismissButton;
 
 @property (assign,nonatomic) KSODimmingOverlayPresentationControllerDirection direction;
 
@@ -32,20 +33,9 @@
 - (instancetype)initWithPresentedViewController:(UIViewController *)presentedViewController presentingViewController:(UIViewController *)presentingViewController {
     return [self initWithPresentedViewController:presentedViewController presentingViewController:presentingViewController direction:KSODimmingOverlayPresentationControllerDirectionTop];
 }
-
+#pragma mark -
 - (void)presentationTransitionWillBegin {
-    if (self.dimmingView == nil) {
-        [self setDimmingView:[[UIButton alloc] initWithFrame:CGRectZero]];
-        [self.dimmingView setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [self.dimmingView setBackgroundColor:self.overlayBackgroundColor];
-        [self.dimmingView setAlpha:0.0];
-        [self.dimmingView addTarget:self action:@selector(_dimmingViewAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self.dimmingView setAccessibilityLabel:NSLocalizedStringWithDefaultValue(@"com.kosoku.ksoanimation.accessibility.label.dismiss", nil, [NSBundle KSO_animationFrameworkBundle], @"Dismiss", @"dismiss accessibility label")];
-        [self.dimmingView setAccessibilityHint:NSLocalizedStringWithDefaultValue(@"com.kosoku.ksoanimation.accessibility.hint.dismiss", nil, [NSBundle KSO_animationFrameworkBundle], @"Dismiss the presented view", @"dismiss accessibility hint")];
-    }
-    
     [self.containerView insertSubview:self.dimmingView atIndex:0];
-    
     [self.containerView setAccessibilityElements:@[self.presentedView,self.dimmingView]];
     
     [NSLayoutConstraint activateConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:0 metrics:nil views:@{@"view": self.dimmingView}]];
@@ -74,11 +64,28 @@
         [self.dimmingView removeFromSuperview];
     }
 }
-
+#pragma mark -
 - (void)containerViewWillLayoutSubviews {
     [self.presentedView setFrame:self.frameOfPresentedViewInContainerView];
+    
+    switch (self.direction) {
+        case KSODimmingOverlayPresentationControllerDirectionTop:
+            self.dismissButton.frame = CGRectMake(0, CGRectGetHeight(self.presentedView.frame), CGRectGetWidth(self.containerView.bounds), CGRectGetHeight(self.containerView.bounds) - CGRectGetHeight(self.presentedView.frame));
+            break;
+        case KSODimmingOverlayPresentationControllerDirectionLeft:
+            self.dismissButton.frame = CGRectMake(CGRectGetWidth(self.presentedView.frame), 0, CGRectGetWidth(self.containerView.bounds) - CGRectGetWidth(self.presentedView.frame), CGRectGetHeight(self.containerView.bounds));
+            break;
+        case KSODimmingOverlayPresentationControllerDirectionBottom:
+            self.dismissButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.containerView.bounds), CGRectGetHeight(self.containerView.bounds) - CGRectGetHeight(self.presentedView.frame));
+            break;
+        case KSODimmingOverlayPresentationControllerDirectionRight:
+            self.dismissButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.containerView.bounds) - CGRectGetWidth(self.presentedView.frame), CGRectGetHeight(self.containerView.bounds));
+            break;
+        default:
+            break;
+    }
 }
-
+#pragma mark -
 - (CGRect)frameOfPresentedViewInContainerView {
     CGRect retval = {.origin=CGPointZero, .size=[self sizeForChildContentContainer:self.presentedViewController withParentContainerSize:self.containerView.bounds.size]};
     
@@ -132,8 +139,29 @@
 + (UIColor *)_defaultOverlayBackgroundColor; {
     return [UIColor colorWithWhite:0 alpha:0.5];
 }
+#pragma mark Properties
+- (UIView *)dimmingView {
+    if (_dimmingView == nil) {
+        _dimmingView = [[UIView alloc] initWithFrame:CGRectZero];
+        _dimmingView.translatesAutoresizingMaskIntoConstraints = NO;
+        _dimmingView.backgroundColor = self.overlayBackgroundColor;
+        _dimmingView.alpha = 0.0;
+        [_dimmingView addSubview:self.dismissButton];
+    }
+    return _dimmingView;
+}
+- (UIButton *)dismissButton {
+    if (_dismissButton == nil) {
+        _dismissButton = [[UIButton alloc] initWithFrame:CGRectZero];
+        _dismissButton.backgroundColor = UIColor.clearColor;
+        _dismissButton.accessibilityLabel = NSLocalizedStringWithDefaultValue(@"com.kosoku.ksoanimation.accessibility.label.dismiss", nil, [NSBundle KSO_animationFrameworkBundle], @"Dismiss", @"dismiss accessibility label");
+        _dismissButton.accessibilityHint = NSLocalizedStringWithDefaultValue(@"com.kosoku.ksoanimation.accessibility.hint.dismiss", nil, [NSBundle KSO_animationFrameworkBundle], @"Dismiss the presented view", @"dismiss accessibility hint");
+        [_dismissButton addTarget:self action:@selector(_dismissButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _dismissButton;
+}
 #pragma mark Actions
-- (IBAction)_dimmingViewAction:(id)sender {
+- (IBAction)_dismissButtonAction:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
