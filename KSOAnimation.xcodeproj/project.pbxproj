@@ -78,6 +78,7 @@
 		07B503BA1F8EA07500EEDA0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		07B503BC1F8EA08100EEDA0F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		07C3E5A31F48D6F700BA0E85 /* Stanley.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stanley.framework; path = "Vendor/Stanley/build/Debug-iphoneos/Stanley.framework"; sourceTree = "<group>"; };
+		07CE61FA1FE5D6F400393202 /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/Localizable.strings; sourceTree = "<group>"; };
 		07D989131F48DA2500C2FA12 /* Demo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D989161F48DA2500C2FA12 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07D989181F48DA2500C2FA12 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -296,6 +297,7 @@
 				en,
 				Base,
 				ja,
+				fa,
 			);
 			mainGroup = 079CA9801F48D254009E4690;
 			productRefGroup = 079CA98B1F48D254009E4690 /* Products */;
@@ -398,6 +400,7 @@
 			children = (
 				07B503BA1F8EA07500EEDA0F /* en */,
 				07B503BC1F8EA08100EEDA0F /* ja */,
+				07CE61FA1FE5D6F400393202 /* fa */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

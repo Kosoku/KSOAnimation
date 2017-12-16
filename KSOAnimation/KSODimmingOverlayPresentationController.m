@@ -154,8 +154,8 @@
     if (_dismissButton == nil) {
         _dismissButton = [[UIButton alloc] initWithFrame:CGRectZero];
         _dismissButton.backgroundColor = UIColor.clearColor;
-        _dismissButton.accessibilityLabel = NSLocalizedStringWithDefaultValue(@"com.kosoku.ksoanimation.accessibility.label.dismiss", nil, [NSBundle KSO_animationFrameworkBundle], @"Dismiss", @"dismiss accessibility label");
-        _dismissButton.accessibilityHint = NSLocalizedStringWithDefaultValue(@"com.kosoku.ksoanimation.accessibility.hint.dismiss", nil, [NSBundle KSO_animationFrameworkBundle], @"Dismiss the presented view", @"dismiss accessibility hint");
+        _dismissButton.accessibilityLabel = NSLocalizedStringWithDefaultValue(@"com.kosoku.ksoanimation.accessibility.label.dismiss", nil, [NSBundle KSO_animationFrameworkBundle], @"Dismiss", @"Dismiss");
+        _dismissButton.accessibilityHint = NSLocalizedStringWithDefaultValue(@"com.kosoku.ksoanimation.accessibility.hint.dismiss", nil, [NSBundle KSO_animationFrameworkBundle], @"Dismiss the presented view", @"Dismiss the presented view");
         [_dismissButton addTarget:self action:@selector(_dismissButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _dismissButton;
