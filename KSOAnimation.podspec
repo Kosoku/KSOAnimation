@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KSOAnimation'
-  s.version          = '0.5.4'
+  s.version          = '0.6.0'
   s.summary          = 'KSOAnimation is a collection of animations and transitions that extend the UIKit framework.'
 
 # This description is used to generate tags and improve search results.
@@ -26,7 +26,7 @@ KSOAnimation is a collection of animations and transitions that extend the `UIKi
   s.author           = { 'William Towe' => 'willbur1984@gmail.com' }
   s.source           = { :git => 'https://github.com/Kosoku/KSOAnimation.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
   
   s.requires_arc = true
 
