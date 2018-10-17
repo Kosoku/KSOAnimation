@@ -17,6 +17,7 @@
 #import "NSBundle+KSOAnimationPrivateExtensions.h"
 
 #import <Stanley/Stanley.h>
+#import <Ditko/Ditko.h>
 
 @interface KSODimmingOverlayPresentationController ()
 @property (strong,nonatomic) UIView *dimmingView;
@@ -152,17 +153,18 @@
 }
 - (UIButton *)dismissButton {
     if (_dismissButton == nil) {
+        kstWeakify(self);
+        
         _dismissButton = [[UIButton alloc] initWithFrame:CGRectZero];
         _dismissButton.backgroundColor = UIColor.clearColor;
         _dismissButton.accessibilityLabel = NSLocalizedStringWithDefaultValue(@"com.kosoku.ksoanimation.accessibility.label.dismiss", nil, [NSBundle KSO_animationFrameworkBundle], @"Dismiss", @"Dismiss");
         _dismissButton.accessibilityHint = NSLocalizedStringWithDefaultValue(@"com.kosoku.ksoanimation.accessibility.hint.dismiss", nil, [NSBundle KSO_animationFrameworkBundle], @"Dismiss the presented view", @"Dismiss the presented view");
-        [_dismissButton addTarget:self action:@selector(_dismissButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_dismissButton KDI_addBlock:^(__kindof UIControl * _Nonnull control, UIControlEvents controlEvents) {
+            kstStrongify(self);
+            [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+        } forControlEvents:UIControlEventTouchUpInside];
     }
     return _dismissButton;
-}
-#pragma mark Actions
-- (IBAction)_dismissButtonAction:(id)sender {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

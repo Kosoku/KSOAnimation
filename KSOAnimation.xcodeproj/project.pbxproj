@@ -10,6 +10,7 @@
 		070521EE1FE1D2730031443B /* KSOFontAwesomeExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070521ED1FE1D2730031443B /* KSOFontAwesomeExtensions.framework */; };
 		070521EF1FE1D2730031443B /* KSOFontAwesomeExtensions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 070521ED1FE1D2730031443B /* KSOFontAwesomeExtensions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		077AD9512177B53A00739A06 /* Direction.m in Sources */ = {isa = PBXBuildFile; fileRef = 077AD9502177B53A00739A06 /* Direction.m */; };
+		077AD9532177BD2900739A06 /* Ditko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077AD9522177BD2900739A06 /* Ditko.framework */; };
 		079CA98F1F48D254009E4690 /* KSOAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 079CA98D1F48D254009E4690 /* KSOAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		079CA99C1F48D3FB009E4690 /* KSODimmingOverlayPresentationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 079CA9981F48D3FB009E4690 /* KSODimmingOverlayPresentationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		079CA99D1F48D3FB009E4690 /* KSODimmingOverlayPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079CA9991F48D3FB009E4690 /* KSODimmingOverlayPresentationController.m */; };
@@ -85,6 +86,7 @@
 		070521ED1FE1D2730031443B /* KSOFontAwesomeExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KSOFontAwesomeExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		077AD94F2177B53A00739A06 /* Direction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Direction.h; sourceTree = "<group>"; };
 		077AD9502177B53A00739A06 /* Direction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Direction.m; sourceTree = "<group>"; };
+		077AD9522177BD2900739A06 /* Ditko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Ditko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		079CA98A1F48D254009E4690 /* KSOAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KSOAnimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		079CA98D1F48D254009E4690 /* KSOAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSOAnimation.h; sourceTree = "<group>"; };
 		079CA98E1F48D254009E4690 /* KSOAnimation-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KSOAnimation-iOS-Info.plist"; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				077AD9532177BD2900739A06 /* Ditko.framework in Frameworks */,
 				07C3E5A41F48D6F700BA0E85 /* Stanley.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +242,7 @@
 		07C3E5A21F48D6F700BA0E85 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				077AD9522177BD2900739A06 /* Ditko.framework */,
 				070521ED1FE1D2730031443B /* KSOFontAwesomeExtensions.framework */,
 				07D9893C1F48E31000C2FA12 /* Loki.framework */,
 				07D989391F48E15400C2FA12 /* Ditko.framework */,
