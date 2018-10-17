@@ -27,7 +27,7 @@
 @implementation ViewController
 
 - (NSString *)title {
-    return @"Demo-iOS";
+    return @"KSOAnimation";
 }
 
 - (void)viewDidLoad {

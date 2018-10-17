@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		070521EE1FE1D2730031443B /* KSOFontAwesomeExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070521ED1FE1D2730031443B /* KSOFontAwesomeExtensions.framework */; };
 		070521EF1FE1D2730031443B /* KSOFontAwesomeExtensions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 070521ED1FE1D2730031443B /* KSOFontAwesomeExtensions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		077AD9512177B53A00739A06 /* Direction.m in Sources */ = {isa = PBXBuildFile; fileRef = 077AD9502177B53A00739A06 /* Direction.m */; };
 		079CA98F1F48D254009E4690 /* KSOAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 079CA98D1F48D254009E4690 /* KSOAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		079CA99C1F48D3FB009E4690 /* KSODimmingOverlayPresentationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 079CA9981F48D3FB009E4690 /* KSODimmingOverlayPresentationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		079CA99D1F48D3FB009E4690 /* KSODimmingOverlayPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079CA9991F48D3FB009E4690 /* KSODimmingOverlayPresentationController.m */; };
@@ -46,7 +47,6 @@
 		07D9892E1F48DA6600C2FA12 /* KSOAnimation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079CA98A1F48D254009E4690 /* KSOAnimation.framework */; };
 		07D9892F1F48DA6600C2FA12 /* KSOAnimation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 079CA98A1F48D254009E4690 /* KSOAnimation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		07D989341F48DCE000C2FA12 /* SlidingOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D989331F48DCE000C2FA12 /* SlidingOverlayViewController.m */; };
-		07D989381F48E06500C2FA12 /* SlidingOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D989361F48E06500C2FA12 /* SlidingOverlayViewController.xib */; };
 		07D9893A1F48E15400C2FA12 /* Ditko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D989391F48E15400C2FA12 /* Ditko.framework */; };
 		07D9893B1F48E15400C2FA12 /* Ditko.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07D989391F48E15400C2FA12 /* Ditko.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		07D9893D1F48E31000C2FA12 /* Loki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D9893C1F48E31000C2FA12 /* Loki.framework */; };
@@ -83,6 +83,8 @@
 
 /* Begin PBXFileReference section */
 		070521ED1FE1D2730031443B /* KSOFontAwesomeExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KSOFontAwesomeExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		077AD94F2177B53A00739A06 /* Direction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Direction.h; sourceTree = "<group>"; };
+		077AD9502177B53A00739A06 /* Direction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Direction.m; sourceTree = "<group>"; };
 		079CA98A1F48D254009E4690 /* KSOAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KSOAnimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		079CA98D1F48D254009E4690 /* KSOAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSOAnimation.h; sourceTree = "<group>"; };
 		079CA98E1F48D254009E4690 /* KSOAnimation-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KSOAnimation-iOS-Info.plist"; sourceTree = "<group>"; };
@@ -130,7 +132,6 @@
 		07D989321F48DCE000C2FA12 /* SlidingOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlidingOverlayViewController.h; sourceTree = "<group>"; };
 		07D989331F48DCE000C2FA12 /* SlidingOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlidingOverlayViewController.m; sourceTree = "<group>"; };
 		07D989351F48DE0700C2FA12 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		07D989371F48E06500C2FA12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SlidingOverlayViewController.xib; sourceTree = "<group>"; };
 		07D989391F48E15400C2FA12 /* Ditko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Ditko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D9893C1F48E31000C2FA12 /* Loki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Loki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -254,6 +255,8 @@
 				07D989191F48DA2500C2FA12 /* AppDelegate.m */,
 				07D9891B1F48DA2500C2FA12 /* ViewController.h */,
 				07D9891C1F48DA2500C2FA12 /* ViewController.m */,
+				077AD94F2177B53A00739A06 /* Direction.h */,
+				077AD9502177B53A00739A06 /* Direction.m */,
 				07D989351F48DE0700C2FA12 /* DetailViewController.h */,
 				07AA771021771B1700AAB3D8 /* PushViewController.h */,
 				07AA771121771B1700AAB3D8 /* PushViewController.m */,
@@ -261,7 +264,6 @@
 				07AA770B2176EE2900AAB3D8 /* ZoomViewController.m */,
 				07D989321F48DCE000C2FA12 /* SlidingOverlayViewController.h */,
 				07D989331F48DCE000C2FA12 /* SlidingOverlayViewController.m */,
-				07D989361F48E06500C2FA12 /* SlidingOverlayViewController.xib */,
 				07D989151F48DA2500C2FA12 /* Supporting Files */,
 			);
 			path = "Demo-iOS";
@@ -398,7 +400,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07D989381F48E06500C2FA12 /* SlidingOverlayViewController.xib in Resources */,
 				07D989251F48DA2500C2FA12 /* LaunchScreen.storyboard in Resources */,
 				07D989221F48DA2500C2FA12 /* Assets.xcassets in Resources */,
 			);
@@ -463,6 +464,7 @@
 				07D9891D1F48DA2500C2FA12 /* ViewController.m in Sources */,
 				07D9891A1F48DA2500C2FA12 /* AppDelegate.m in Sources */,
 				07D989171F48DA2500C2FA12 /* main.m in Sources */,
+				077AD9512177B53A00739A06 /* Direction.m in Sources */,
 				07AA771221771B1700AAB3D8 /* PushViewController.m in Sources */,
 				07AA770C2176EE2900AAB3D8 /* ZoomViewController.m in Sources */,
 			);
@@ -495,14 +497,6 @@
 				07D989241F48DA2500C2FA12 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		07D989361F48E06500C2FA12 /* SlidingOverlayViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				07D989371F48E06500C2FA12 /* Base */,
-			);
-			name = SlidingOverlayViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
