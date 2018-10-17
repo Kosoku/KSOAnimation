@@ -1,8 +1,8 @@
 //
-//  KSOAnimation.h
-//  KSOAnimation
+//  KSOAnimationInteractionController.h
+//  KSOAnimation-iOS
 //
-//  Created by William Towe on 8/19/17.
+//  Created by William Towe on 10/16/18.
 //  Copyright © 2018 Kosoku Interactive, LLC. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -15,18 +15,18 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for KSOAnimation.
-FOUNDATION_EXPORT double KSOAnimationVersionNumber;
+NS_ASSUME_NONNULL_BEGIN
 
-//! Project version string for KSOAnimation.
-FOUNDATION_EXPORT const unsigned char KSOAnimationVersionString[];
+@interface KSOAnimationInteractionController : UIPercentDrivenInteractiveTransition
 
-// In this header, you should import all the public headers of your framework using statements like #import <KSOAnimation/PublicHeader.h>
+@property (readonly,weak,nonatomic) UIViewController *presentedViewController;
+@property (readonly,assign,nonatomic,getter=isInteractive) BOOL interactive;
 
+- (instancetype)initWithPresentedViewController:(UIViewController *)presentedViewController NS_DESIGNATED_INITIALIZER;
 
-#import <KSOAnimation/KSODimmingOverlayPresentationController.h>
-#import <KSOAnimation/KSOSlidingAnimationController.h>
-#import <KSOAnimation/KSOHorizontalSwipeInteractionController.h>
-#import <KSOAnimation/KSOVerticalSwipeInteractionController.h>
-#import <KSOAnimation/KSOPinchInteractionController.h>
-#import <KSOAnimation/UIViewController+KSOAnimationExtensions.h>
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
+
+@end
+
+NS_ASSUME_NONNULL_END

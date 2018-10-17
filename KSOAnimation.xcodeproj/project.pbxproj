@@ -14,10 +14,21 @@
 		079CA99D1F48D3FB009E4690 /* KSODimmingOverlayPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079CA9991F48D3FB009E4690 /* KSODimmingOverlayPresentationController.m */; };
 		079CA99E1F48D3FB009E4690 /* KSOSlidingAnimationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 079CA99A1F48D3FB009E4690 /* KSOSlidingAnimationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		079CA99F1F48D3FB009E4690 /* KSOSlidingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079CA99B1F48D3FB009E4690 /* KSOSlidingAnimationController.m */; };
+		07AA77002176DC9F00AAB3D8 /* KSOVerticalSwipeInteractionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 07AA76FE2176DC9F00AAB3D8 /* KSOVerticalSwipeInteractionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07AA77012176DC9F00AAB3D8 /* KSOVerticalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AA76FF2176DC9F00AAB3D8 /* KSOVerticalSwipeInteractionController.m */; };
+		07AA77042176E00500AAB3D8 /* KSOPinchInteractionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 07AA77022176E00500AAB3D8 /* KSOPinchInteractionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07AA77052176E00500AAB3D8 /* KSOPinchInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AA77032176E00500AAB3D8 /* KSOPinchInteractionController.m */; };
+		07B1468F2176C57D00EE41C8 /* KSOHorizontalSwipeInteractionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B1468D2176C57D00EE41C8 /* KSOHorizontalSwipeInteractionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07B146902176C57D00EE41C8 /* KSOHorizontalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B1468E2176C57D00EE41C8 /* KSOHorizontalSwipeInteractionController.m */; };
 		07B503B61F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B503B41F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		07B503B71F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B503B51F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.m */; };
 		07B503BB1F8EA07500EEDA0F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07B503B91F8EA07500EEDA0F /* Localizable.strings */; };
 		07C3E5A41F48D6F700BA0E85 /* Stanley.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C3E5A31F48D6F700BA0E85 /* Stanley.framework */; };
+		07CEA8E12176CEDA00945962 /* UIViewController+KSOAnimationExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07CEA8DF2176CEDA00945962 /* UIViewController+KSOAnimationExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07CEA8E22176CEDA00945962 /* UIViewController+KSOAnimationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07CEA8E02176CEDA00945962 /* UIViewController+KSOAnimationExtensions.m */; };
+		07CEA8E52176CF5600945962 /* KSOAnimationInteractionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 07CEA8E32176CF5600945962 /* KSOAnimationInteractionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07CEA8E62176CF5600945962 /* KSOAnimationInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07CEA8E42176CF5600945962 /* KSOAnimationInteractionController.m */; };
+		07CEA8E92176D12200945962 /* KSOAnimationInteractionController+KSOAnimationSubclassExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07CEA8E72176D12200945962 /* KSOAnimationInteractionController+KSOAnimationSubclassExtensions.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		07D989171F48DA2500C2FA12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D989161F48DA2500C2FA12 /* main.m */; };
 		07D9891A1F48DA2500C2FA12 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D989191F48DA2500C2FA12 /* AppDelegate.m */; };
 		07D9891D1F48DA2500C2FA12 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D9891C1F48DA2500C2FA12 /* ViewController.m */; };
@@ -73,12 +84,23 @@
 		079CA9991F48D3FB009E4690 /* KSODimmingOverlayPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSODimmingOverlayPresentationController.m; sourceTree = "<group>"; };
 		079CA99A1F48D3FB009E4690 /* KSOSlidingAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSOSlidingAnimationController.h; sourceTree = "<group>"; };
 		079CA99B1F48D3FB009E4690 /* KSOSlidingAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSOSlidingAnimationController.m; sourceTree = "<group>"; };
-		07B503B41F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSBundle+KSOAnimationPrivateExtensions.h"; path = "Private/NSBundle+KSOAnimationPrivateExtensions.h"; sourceTree = "<group>"; };
-		07B503B51F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+KSOAnimationPrivateExtensions.m"; path = "Private/NSBundle+KSOAnimationPrivateExtensions.m"; sourceTree = "<group>"; };
+		07AA76FE2176DC9F00AAB3D8 /* KSOVerticalSwipeInteractionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSOVerticalSwipeInteractionController.h; sourceTree = "<group>"; };
+		07AA76FF2176DC9F00AAB3D8 /* KSOVerticalSwipeInteractionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSOVerticalSwipeInteractionController.m; sourceTree = "<group>"; };
+		07AA77022176E00500AAB3D8 /* KSOPinchInteractionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSOPinchInteractionController.h; sourceTree = "<group>"; };
+		07AA77032176E00500AAB3D8 /* KSOPinchInteractionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSOPinchInteractionController.m; sourceTree = "<group>"; };
+		07B1468D2176C57D00EE41C8 /* KSOHorizontalSwipeInteractionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSOHorizontalSwipeInteractionController.h; sourceTree = "<group>"; };
+		07B1468E2176C57D00EE41C8 /* KSOHorizontalSwipeInteractionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSOHorizontalSwipeInteractionController.m; sourceTree = "<group>"; };
+		07B503B41F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+KSOAnimationPrivateExtensions.h"; sourceTree = "<group>"; };
+		07B503B51F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+KSOAnimationPrivateExtensions.m"; sourceTree = "<group>"; };
 		07B503BA1F8EA07500EEDA0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		07B503BC1F8EA08100EEDA0F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		07C3E5A31F48D6F700BA0E85 /* Stanley.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stanley.framework; path = "Vendor/Stanley/build/Debug-iphoneos/Stanley.framework"; sourceTree = "<group>"; };
 		07CE61FA1FE5D6F400393202 /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/Localizable.strings; sourceTree = "<group>"; };
+		07CEA8DF2176CEDA00945962 /* UIViewController+KSOAnimationExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KSOAnimationExtensions.h"; sourceTree = "<group>"; };
+		07CEA8E02176CEDA00945962 /* UIViewController+KSOAnimationExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KSOAnimationExtensions.m"; sourceTree = "<group>"; };
+		07CEA8E32176CF5600945962 /* KSOAnimationInteractionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSOAnimationInteractionController.h; sourceTree = "<group>"; };
+		07CEA8E42176CF5600945962 /* KSOAnimationInteractionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSOAnimationInteractionController.m; sourceTree = "<group>"; };
+		07CEA8E72176D12200945962 /* KSOAnimationInteractionController+KSOAnimationSubclassExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KSOAnimationInteractionController+KSOAnimationSubclassExtensions.h"; sourceTree = "<group>"; };
 		07D989131F48DA2500C2FA12 /* Demo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D989161F48DA2500C2FA12 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07D989181F48DA2500C2FA12 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -167,10 +189,29 @@
 				079CA9991F48D3FB009E4690 /* KSODimmingOverlayPresentationController.m */,
 				079CA99A1F48D3FB009E4690 /* KSOSlidingAnimationController.h */,
 				079CA99B1F48D3FB009E4690 /* KSOSlidingAnimationController.m */,
+				07CEA8E32176CF5600945962 /* KSOAnimationInteractionController.h */,
+				07CEA8E42176CF5600945962 /* KSOAnimationInteractionController.m */,
+				07B1468D2176C57D00EE41C8 /* KSOHorizontalSwipeInteractionController.h */,
+				07B1468E2176C57D00EE41C8 /* KSOHorizontalSwipeInteractionController.m */,
+				07AA76FE2176DC9F00AAB3D8 /* KSOVerticalSwipeInteractionController.h */,
+				07AA76FF2176DC9F00AAB3D8 /* KSOVerticalSwipeInteractionController.m */,
+				07AA77022176E00500AAB3D8 /* KSOPinchInteractionController.h */,
+				07AA77032176E00500AAB3D8 /* KSOPinchInteractionController.m */,
+				07CEA8DF2176CEDA00945962 /* UIViewController+KSOAnimationExtensions.h */,
+				07CEA8E02176CEDA00945962 /* UIViewController+KSOAnimationExtensions.m */,
+				07B1468C2176C53800EE41C8 /* Private */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		07B1468C2176C53800EE41C8 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				07CEA8E72176D12200945962 /* KSOAnimationInteractionController+KSOAnimationSubclassExtensions.h */,
 				07B503B41F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.h */,
 				07B503B51F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.m */,
 			);
-			name = Source;
+			path = Private;
 			sourceTree = "<group>";
 		};
 		07C3E5A21F48D6F700BA0E85 /* Frameworks */ = {
@@ -219,8 +260,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07CEA8E12176CEDA00945962 /* UIViewController+KSOAnimationExtensions.h in Headers */,
 				07B503B61F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.h in Headers */,
+				07AA77042176E00500AAB3D8 /* KSOPinchInteractionController.h in Headers */,
+				07AA77002176DC9F00AAB3D8 /* KSOVerticalSwipeInteractionController.h in Headers */,
+				07CEA8E52176CF5600945962 /* KSOAnimationInteractionController.h in Headers */,
 				079CA99E1F48D3FB009E4690 /* KSOSlidingAnimationController.h in Headers */,
+				07B1468F2176C57D00EE41C8 /* KSOHorizontalSwipeInteractionController.h in Headers */,
+				07CEA8E92176D12200945962 /* KSOAnimationInteractionController+KSOAnimationSubclassExtensions.h in Headers */,
 				079CA99C1F48D3FB009E4690 /* KSODimmingOverlayPresentationController.h in Headers */,
 				079CA98F1F48D254009E4690 /* KSOAnimation.h in Headers */,
 			);
@@ -369,7 +416,12 @@
 			files = (
 				079CA99F1F48D3FB009E4690 /* KSOSlidingAnimationController.m in Sources */,
 				07B503B71F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.m in Sources */,
+				07AA77012176DC9F00AAB3D8 /* KSOVerticalSwipeInteractionController.m in Sources */,
+				07CEA8E22176CEDA00945962 /* UIViewController+KSOAnimationExtensions.m in Sources */,
 				079CA99D1F48D3FB009E4690 /* KSODimmingOverlayPresentationController.m in Sources */,
+				07AA77052176E00500AAB3D8 /* KSOPinchInteractionController.m in Sources */,
+				07B146902176C57D00EE41C8 /* KSOHorizontalSwipeInteractionController.m in Sources */,
+				07CEA8E62176CF5600945962 /* KSOAnimationInteractionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

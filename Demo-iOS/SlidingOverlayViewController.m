@@ -27,6 +27,7 @@
 @property (copy,nonatomic) NSArray<NSNumber *> *directions;
 @property (assign,nonatomic) Direction direction;
 @property (assign,nonatomic) BOOL shouldUseCustomPresentation;
+@property (strong,nonatomic) KSOHorizontalSwipeInteractionController *interactionController;
 
 - (NSString *)_titleForDirection:(KSOSlidingAnimationControllerDirection)direction;
 @end
@@ -92,6 +93,16 @@
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    switch (self.direction) {
+        case DirectionTop:
+        case DirectionBottom:
+            presented.KSO_animationInteractionController = [[KSOPinchInteractionController alloc] initWithPresentedViewController:presented];
+            break;
+        default:
+            presented.KSO_animationInteractionController = [[KSOHorizontalSwipeInteractionController alloc] initWithPresentedViewController:presented];
+            break;
+    }
+    
     return [[KSOSlidingAnimationController alloc] initWithDirection:(KSOSlidingAnimationControllerDirection)self.direction presenting:YES];
 }
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
@@ -100,6 +111,10 @@
 - (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source {
     return [[KSODimmingOverlayPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting direction:(KSODimmingOverlayPresentationControllerDirection)self.direction];
 }
+- (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
+    return self.KSO_animationInteractionController.isInteractive ? self.KSO_animationInteractionController : nil;
+}
+
 
 - (NSString *)_titleForDirection:(KSOSlidingAnimationControllerDirection)direction; {
     switch (direction) {
