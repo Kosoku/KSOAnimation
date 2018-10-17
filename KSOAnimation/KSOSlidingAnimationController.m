@@ -18,7 +18,7 @@
 #import <Stanley/Stanley.h>
 
 @interface KSOSlidingAnimationController ()
-@property (assign,nonatomic) KSOSlidingAnimationControllerDirection direction;
+@property (assign,nonatomic) KSOAnimationDirection direction;
 @property (assign,nonatomic,getter=isPresenting) BOOL presenting;
 @end
 
@@ -38,16 +38,16 @@
     CGRect dismissedFrame = presentedFrame;
     
     switch (self.direction) {
-        case KSOSlidingAnimationControllerDirectionTop:
+        case KSOAnimationDirectionUp:
             dismissedFrame.origin.y = -CGRectGetHeight(presentedFrame);
             break;
-        case KSOSlidingAnimationControllerDirectionLeft:
+        case KSOAnimationDirectionLeft:
             dismissedFrame.origin.x = -CGRectGetWidth(presentedFrame);
             break;
-        case KSOSlidingAnimationControllerDirectionBottom:
+        case KSOAnimationDirectionDown:
             dismissedFrame.origin.y = CGRectGetHeight(transitionContext.containerView.frame);
             break;
-        case KSOSlidingAnimationControllerDirectionRight:
+        case KSOAnimationDirectionRight:
             dismissedFrame.origin.x = CGRectGetWidth(transitionContext.containerView.frame);
             break;
     }
@@ -64,7 +64,7 @@
     }];
 }
 
-- (instancetype)initWithDirection:(KSOSlidingAnimationControllerDirection)direction presenting:(BOOL)presenting {
+- (instancetype)initWithDirection:(KSOAnimationDirection)direction presenting:(BOOL)presenting {
     if (!(self = [super init]))
         return nil;
     

@@ -1,8 +1,8 @@
 //
-//  SlidingOverlayViewController.h
-//  KSOAnimation
+//  KSOPushAnimationController.h
+//  Demo-iOS
 //
-//  Created by William Towe on 8/19/17.
+//  Created by William Towe on 10/17/18.
 //  Copyright © 2018 Kosoku Interactive, LLC. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -15,10 +15,23 @@
 
 #import <UIKit/UIKit.h>
 #import <KSOAnimation/KSOAnimationDefines.h>
-#import "DetailViewController.h"
 
-@interface SlidingOverlayViewController : UIViewController <DetailViewController>
+NS_ASSUME_NONNULL_BEGIN
 
-- (instancetype)initForPresenting:(BOOL)presenting custom:(BOOL)custom direction:(KSOAnimationDirection)direction;
+@interface KSOPushAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
+
+/**
+ Set and get the duration of the animation.
+ 
+ The default is 0.25 seconds.
+ */
+@property (assign,nonatomic) NSTimeInterval animationDuration;
+
+- (instancetype)initWithDirection:(KSOAnimationDirection)direction presenting:(BOOL)presenting NS_DESIGNATED_INITIALIZER;
+
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -1,8 +1,8 @@
 //
-//  SlidingOverlayViewController.h
-//  KSOAnimation
+//  PushViewController.h
+//  Demo-iOS
 //
-//  Created by William Towe on 8/19/17.
+//  Created by William Towe on 10/17/18.
 //  Copyright © 2018 Kosoku Interactive, LLC. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -17,8 +17,12 @@
 #import <KSOAnimation/KSOAnimationDefines.h>
 #import "DetailViewController.h"
 
-@interface SlidingOverlayViewController : UIViewController <DetailViewController>
+NS_ASSUME_NONNULL_BEGIN
 
-- (instancetype)initForPresenting:(BOOL)presenting custom:(BOOL)custom direction:(KSOAnimationDirection)direction;
+@interface PushViewController : UIViewController <DetailViewController>
+
+- (instancetype)initWithDirection:(KSOAnimationDirection)direction;
 
 @end
+
+NS_ASSUME_NONNULL_END

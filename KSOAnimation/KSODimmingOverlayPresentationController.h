@@ -14,30 +14,9 @@
 //  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <UIKit/UIKit.h>
+#import <KSOAnimation/KSOAnimationDefines.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
-/**
- Typedef for possible presentation directions.
- */
-typedef NS_ENUM(NSInteger,KSODimmingOverlayPresentationControllerDirection) {
-    /**
-     The overlay will be visible on the bottom.
-     */
-    KSODimmingOverlayPresentationControllerDirectionTop,
-    /**
-     The overlay will be visible on the right.
-     */
-    KSODimmingOverlayPresentationControllerDirectionLeft,
-    /**
-     The overlay will be visible on the top.
-     */
-    KSODimmingOverlayPresentationControllerDirectionBottom,
-    /**
-     The overlay will be visible on the left.
-     */
-    KSODimmingOverlayPresentationControllerDirectionRight
-};
 
 /**
  KSODimmingOverlayPresentationController presents a view controller with a dimming view inserted below the presented view controller with its background color set to overlayBackgroundColor.
@@ -67,7 +46,7 @@ typedef NS_ENUM(NSInteger,KSODimmingOverlayPresentationControllerDirection) {
  @param direction The direction from which the presentedViewController is being presented from
  @return The initialized instance
  */
-- (instancetype)initWithPresentedViewController:(UIViewController *)presentedViewController presentingViewController:(nullable UIViewController *)presentingViewController direction:(KSODimmingOverlayPresentationControllerDirection)direction NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithPresentedViewController:(UIViewController *)presentedViewController presentingViewController:(nullable UIViewController *)presentingViewController direction:(KSOAnimationDirection)direction NS_DESIGNATED_INITIALIZER;
 
 @end
 

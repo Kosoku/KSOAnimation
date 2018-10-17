@@ -22,7 +22,7 @@
 @property (strong,nonatomic) UIView *dimmingView;
 @property (strong,nonatomic) UIButton *dismissButton;
 
-@property (assign,nonatomic) KSODimmingOverlayPresentationControllerDirection direction;
+@property (assign,nonatomic) KSOAnimationDirection direction;
 
 + (UIColor *)_defaultOverlayBackgroundColor;
 @end
@@ -31,7 +31,7 @@
 
 #pragma mark *** Subclass Overrides ***
 - (instancetype)initWithPresentedViewController:(UIViewController *)presentedViewController presentingViewController:(UIViewController *)presentingViewController {
-    return [self initWithPresentedViewController:presentedViewController presentingViewController:presentingViewController direction:KSODimmingOverlayPresentationControllerDirectionTop];
+    return [self initWithPresentedViewController:presentedViewController presentingViewController:presentingViewController direction:KSOAnimationDirectionUp];
 }
 #pragma mark -
 - (void)presentationTransitionWillBegin {
@@ -69,16 +69,16 @@
     [self.presentedView setFrame:self.frameOfPresentedViewInContainerView];
     
     switch (self.direction) {
-        case KSODimmingOverlayPresentationControllerDirectionTop:
+        case KSOAnimationDirectionUp:
             self.dismissButton.frame = CGRectMake(0, CGRectGetHeight(self.presentedView.frame), CGRectGetWidth(self.containerView.bounds), CGRectGetHeight(self.containerView.bounds) - CGRectGetHeight(self.presentedView.frame));
             break;
-        case KSODimmingOverlayPresentationControllerDirectionLeft:
+        case KSOAnimationDirectionLeft:
             self.dismissButton.frame = CGRectMake(CGRectGetWidth(self.presentedView.frame), 0, CGRectGetWidth(self.containerView.bounds) - CGRectGetWidth(self.presentedView.frame), CGRectGetHeight(self.containerView.bounds));
             break;
-        case KSODimmingOverlayPresentationControllerDirectionBottom:
+        case KSOAnimationDirectionDown:
             self.dismissButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.containerView.bounds), CGRectGetHeight(self.containerView.bounds) - CGRectGetHeight(self.presentedView.frame));
             break;
-        case KSODimmingOverlayPresentationControllerDirectionRight:
+        case KSOAnimationDirectionRight:
             self.dismissButton.frame = CGRectMake(0, 0, CGRectGetWidth(self.containerView.bounds) - CGRectGetWidth(self.presentedView.frame), CGRectGetHeight(self.containerView.bounds));
             break;
         default:
@@ -90,10 +90,10 @@
     CGRect retval = {.origin=CGPointZero, .size=[self sizeForChildContentContainer:self.presentedViewController withParentContainerSize:self.containerView.bounds.size]};
     
     switch (self.direction) {
-        case KSODimmingOverlayPresentationControllerDirectionRight:
+        case KSOAnimationDirectionRight:
             retval.origin.x = CGRectGetWidth(self.containerView.frame) * (1.0 - self.childContentContainerSizePercentage);
             break;
-        case KSODimmingOverlayPresentationControllerDirectionBottom:
+        case KSOAnimationDirectionDown:
             retval.origin.y = CGRectGetHeight(self.containerView.frame) * (1.0 - self.childContentContainerSizePercentage);
             break;
         default:
@@ -106,12 +106,12 @@
     CGSize retval = parentSize;
     
     switch (self.direction) {
-        case KSODimmingOverlayPresentationControllerDirectionTop:
-        case KSODimmingOverlayPresentationControllerDirectionBottom:
+        case KSOAnimationDirectionUp:
+        case KSOAnimationDirectionDown:
             retval.height *= self.childContentContainerSizePercentage;
             break;
-        case KSODimmingOverlayPresentationControllerDirectionLeft:
-        case KSODimmingOverlayPresentationControllerDirectionRight:
+        case KSOAnimationDirectionLeft:
+        case KSOAnimationDirectionRight:
             retval.width *= self.childContentContainerSizePercentage;
             break;
         default:
@@ -121,7 +121,7 @@
     return retval;
 }
 #pragma mark *** Public Methods ***
-- (instancetype)initWithPresentedViewController:(UIViewController *)presentedViewController presentingViewController:(UIViewController *)presentingViewController direction:(KSODimmingOverlayPresentationControllerDirection)direction {
+- (instancetype)initWithPresentedViewController:(UIViewController *)presentedViewController presentingViewController:(UIViewController *)presentingViewController direction:(KSOAnimationDirection)direction {
     if (!(self = [super initWithPresentedViewController:presentedViewController presentingViewController:presentingViewController]))
         return nil;
     

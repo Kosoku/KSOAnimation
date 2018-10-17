@@ -25,11 +25,11 @@
 @property (weak,nonatomic) IBOutlet UISwitch *switchControl;
 
 @property (copy,nonatomic) NSArray<NSNumber *> *directions;
-@property (assign,nonatomic) Direction direction;
+@property (assign,nonatomic) KSOAnimationDirection direction;
 @property (assign,nonatomic) BOOL shouldUseCustomPresentation;
 @property (strong,nonatomic) KSOHorizontalSwipeInteractionController *interactionController;
 
-- (NSString *)_titleForDirection:(KSOSlidingAnimationControllerDirection)direction;
+- (NSString *)_titleForDirection:(KSOAnimationDirection)direction;
 @end
 
 @implementation SlidingOverlayViewController
@@ -42,7 +42,7 @@
     return self.class.displayTitle;
 }
 
-- (instancetype)initForPresenting:(BOOL)presenting custom:(BOOL)custom direction:(Direction)direction {
+- (instancetype)initForPresenting:(BOOL)presenting custom:(BOOL)custom direction:(KSOAnimationDirection)direction {
     if (!(self = [super init]))
         return nil;
     
@@ -68,10 +68,10 @@
     [self.view setTintColor:contrastingColor];
     [self.customLabel setTextColor:contrastingColor];
     
-    [self setDirections:@[@(KSOSlidingAnimationControllerDirectionTop),
-                          @(KSOSlidingAnimationControllerDirectionLeft),
-                          @(KSOSlidingAnimationControllerDirectionBottom),
-                          @(KSOSlidingAnimationControllerDirectionRight)]];
+    [self setDirections:@[@(KSOAnimationDirectionUp),
+                          @(KSOAnimationDirectionLeft),
+                          @(KSOAnimationDirectionDown),
+                          @(KSOAnimationDirectionRight)]];
     
     [self.directionButton setDataSource:self];
     [self.directionButton setDelegate:self];
@@ -94,8 +94,8 @@
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
     switch (self.direction) {
-        case DirectionTop:
-        case DirectionBottom:
+        case KSOAnimationDirectionUp:
+        case KSOAnimationDirectionDown:
             presented.KSO_animationInteractionController = [[KSOVerticalSwipeInteractionController alloc] initWithPresentedViewController:presented];
             break;
         default:
@@ -103,29 +103,29 @@
             break;
     }
     
-    return [[KSOSlidingAnimationController alloc] initWithDirection:(KSOSlidingAnimationControllerDirection)self.direction presenting:YES];
+    return [[KSOSlidingAnimationController alloc] initWithDirection:self.direction presenting:YES];
 }
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    return [[KSOSlidingAnimationController alloc] initWithDirection:(KSOSlidingAnimationControllerDirection)self.direction presenting:NO];
+    return [[KSOSlidingAnimationController alloc] initWithDirection:self.direction presenting:NO];
 }
 - (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source {
-    return [[KSODimmingOverlayPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting direction:(KSODimmingOverlayPresentationControllerDirection)self.direction];
+    return [[KSODimmingOverlayPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting direction:self.direction];
 }
 - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
     return self.KSO_animationInteractionController.isInteractive ? self.KSO_animationInteractionController : nil;
 }
 
 
-- (NSString *)_titleForDirection:(KSOSlidingAnimationControllerDirection)direction; {
+- (NSString *)_titleForDirection:(KSOAnimationDirection)direction; {
     switch (direction) {
-        case KSOSlidingAnimationControllerDirectionRight:
+        case KSOAnimationDirectionRight:
             return @"Right";
-        case KSOSlidingAnimationControllerDirectionBottom:
-            return @"Bottom";
-        case KSOSlidingAnimationControllerDirectionLeft:
+        case KSOAnimationDirectionDown:
+            return @"Down";
+        case KSOAnimationDirectionLeft:
             return @"Left";
-        case KSOSlidingAnimationControllerDirectionTop:
-            return @"Top";
+        case KSOAnimationDirectionUp:
+            return @"Up";
     }
 }
 

@@ -23,8 +23,9 @@ FOUNDATION_EXPORT const unsigned char KSOAnimationVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <KSOAnimation/PublicHeader.h>
 
-
+#import <KSOAnimation/KSOAnimationDefines.h>
 #import <KSOAnimation/KSODimmingOverlayPresentationController.h>
+#import <KSOAnimation/KSOPushAnimationController.h>
 #import <KSOAnimation/KSOSlidingAnimationController.h>
 #import <KSOAnimation/KSOZoomAnimationController.h>
 #import <KSOAnimation/KSOHorizontalSwipeInteractionController.h>
