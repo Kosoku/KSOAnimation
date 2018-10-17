@@ -17,11 +17,28 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ KSOAnimationInteractionController is the base class for controllers that manage interactive dismissal. You should set them on the presented view controller using the setKSO_animationInteractionController: method within the animationControllerForPresentedController:sourceController: delegate method. You should return the same instance from the interactionControllerForDismissal: delegate method only when the isInteractive method returns YES, which means its gesture recognizer triggered to begin the interactive dismissal.
+ 
+ See the demo app for examples.
+ */
 @interface KSOAnimationInteractionController : UIPercentDrivenInteractiveTransition
 
+/**
+ Get the view controller being presented.
+ */
 @property (readonly,weak,nonatomic) UIViewController *presentedViewController;
+/**
+ Get whether the receiver is currently interactive, which means its gesture recognizer has triggered.
+ */
 @property (readonly,assign,nonatomic,getter=isInteractive) BOOL interactive;
 
+/**
+ Creates and returns an initialized instance and attaches any related gesture recognizers to *presentedViewController* view.
+ 
+ @param presentedViewController The view controller being presented
+ @return The initialized instance
+ */
 - (instancetype)initWithPresentedViewController:(UIViewController *)presentedViewController NS_DESIGNATED_INITIALIZER;
 
 - (instancetype)init NS_UNAVAILABLE;

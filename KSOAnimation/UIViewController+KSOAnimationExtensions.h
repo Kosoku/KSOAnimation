@@ -17,9 +17,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ Category on UIViewController allowing association of a KSOAnimationInteractionController subclass with a view controller instance.
+ */
 @interface UIViewController (KSOAnimationExtensions)
 
-@property (strong,nonatomic) __kindof KSOAnimationInteractionController *KSO_animationInteractionController;
+/**
+ Set and get the KSOAnimationInteractionController subclass associated with the receiver.
+ */
+@property (strong,nonatomic,nullable) __kindof KSOAnimationInteractionController *KSO_animationInteractionController;
 
 @end
 

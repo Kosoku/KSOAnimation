@@ -17,6 +17,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ KSOZoomAnimationController presents a view controller by zooming from a view in the presenting view controller and cross fading with the presented view controller. The dismiss animation zooms into a view in the presenting view controller.
+ */
 @interface KSOZoomAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
 
 /**
@@ -26,6 +29,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (assign,nonatomic) NSTimeInterval animationDuration;
 
+/**
+ Creates and returns an initialized instance. The *zoomView* indicates the view to zoom from or to depending on whether *presenting* is YES or NO.
+ 
+ @param zoomView The view to zoom from or to
+ @param presenting Whether the view controller is being presented or dismissed
+ @return The initialized instance
+ */
 - (instancetype)initWithZoomView:(UIView *)zoomView presenting:(BOOL)presenting NS_DESIGNATED_INITIALIZER;
 
 - (instancetype)init NS_UNAVAILABLE;

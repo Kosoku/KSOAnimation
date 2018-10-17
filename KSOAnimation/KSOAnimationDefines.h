@@ -18,10 +18,25 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ Typedef describing the direction of a custom animation. See the individual animation classes for specific information.
+ */
 typedef NS_ENUM(NSInteger, KSOAnimationDirection) {
+    /**
+     The animation travels up.
+     */
     KSOAnimationDirectionUp,
+    /**
+     The animation travels down.
+     */
     KSOAnimationDirectionDown,
+    /**
+     The animation travels left.
+     */
     KSOAnimationDirectionLeft,
+    /**
+     The animation travels right.
+     */
     KSOAnimationDirectionRight
 };
 

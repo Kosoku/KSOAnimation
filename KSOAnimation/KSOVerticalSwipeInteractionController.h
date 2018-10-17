@@ -17,6 +17,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ KSOVerticalSwipeInteractionController allow interactive presentation and dismissal using a UIPanGestureRecognizer.
+ */
 @interface KSOVerticalSwipeInteractionController : KSOAnimationInteractionController
 
 @end

@@ -37,9 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong,nonatomic,null_resettable) UIColor *overlayBackgroundColor;
 
 /**
- The designated initializer.
- 
- The additional direction parameter indicates from which direction the presentedViewController is being presented from.
+ Creates and returns an initialized instance. The additional direction parameter indicates from which direction the presentedViewController is being presented from.
  
  @param presentedViewController The view controller being presented
  @param presentingViewController The view controller that is presenting

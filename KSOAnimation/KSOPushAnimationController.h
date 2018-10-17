@@ -18,6 +18,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ KSOPushAnimationController presents a view controller by having it pushed off screen by the presented view controller.
+ */
 @interface KSOPushAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
 
 /**
@@ -27,6 +30,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (assign,nonatomic) NSTimeInterval animationDuration;
 
+/**
+ Creates and returns an initialized instance. The direction parameter indicates which direction the presenting view is pushed to.
+ 
+ @param direction The direction to push the presenting view off screen
+ @param presenting Whether the view controller is being presented or dismissed
+ @return The initialized instance
+ */
 - (instancetype)initWithDirection:(KSOAnimationDirection)direction presenting:(BOOL)presenting NS_DESIGNATED_INITIALIZER;
 
 - (instancetype)init NS_UNAVAILABLE;

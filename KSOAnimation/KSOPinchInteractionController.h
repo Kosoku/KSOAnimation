@@ -17,6 +17,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ KSOPinchInteractionController allows interactive presentation and dismissal using a UIPinchGestureRecognizer.
+ */
 @interface KSOPinchInteractionController : KSOAnimationInteractionController
 
 @end
