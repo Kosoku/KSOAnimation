@@ -96,7 +96,7 @@
     switch (self.direction) {
         case DirectionTop:
         case DirectionBottom:
-            presented.KSO_animationInteractionController = [[KSOPinchInteractionController alloc] initWithPresentedViewController:presented];
+            presented.KSO_animationInteractionController = [[KSOVerticalSwipeInteractionController alloc] initWithPresentedViewController:presented];
             break;
         default:
             presented.KSO_animationInteractionController = [[KSOHorizontalSwipeInteractionController alloc] initWithPresentedViewController:presented];
