@@ -15,6 +15,7 @@
 
 #import "ViewController.h"
 #import "SlidingOverlayViewController.h"
+#import "ZoomViewController.h"
 
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (strong,nonatomic) UITableView *tableView;
@@ -31,7 +32,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setViewControllerClasses:@[SlidingOverlayViewController.class]];
+    [self setViewControllerClasses:@[SlidingOverlayViewController.class,
+                                     ZoomViewController.class]];
     
     [self setTableView:[[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain]];
     [self.tableView setTranslatesAutoresizingMaskIntoConstraints:NO];

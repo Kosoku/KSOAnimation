@@ -1,8 +1,8 @@
 //
-//  KSOSlidingAnimationController.h
-//  KSOAnimation
+//  KSOZoomAnimationController.h
+//  KSOAnimation-iOS
 //
-//  Created by William Towe on 7/27/17.
+//  Created by William Towe on 10/17/18.
 //  Copyright © 2018 Kosoku Interactive, LLC. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -15,32 +15,9 @@
 
 #import <UIKit/UIKit.h>
 
-/**
- Typedef for possible animation directions.
- */
-typedef NS_ENUM(NSInteger,KSOSlidingAnimationControllerDirection) {
-    /**
-     The animation starts from the top.
-     */
-    KSOSlidingAnimationControllerDirectionTop,
-    /**
-     The animation starts from the left.
-     */
-    KSOSlidingAnimationControllerDirectionLeft,
-    /**
-     The animation starts from the bottom.
-     */
-    KSOSlidingAnimationControllerDirectionBottom,
-    /**
-     The animation starts from the right.
-     */
-    KSOSlidingAnimationControllerDirectionRight
-};
+NS_ASSUME_NONNULL_BEGIN
 
-/**
- KSOSlidingAnimationController presents a view controller by sliding it from offscreen to its final position based on the provided direction parameter.
- */
-@interface KSOSlidingAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
+@interface KSOZoomAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
 
 /**
  Set and get the duration of the animation.
@@ -49,18 +26,11 @@ typedef NS_ENUM(NSInteger,KSOSlidingAnimationControllerDirection) {
  */
 @property (assign,nonatomic) NSTimeInterval animationDuration;
 
-/**
- The designated initializer.
- 
- The direction indicates from which direction the view controller is being presented from.
- 
- @param direction The direction to present from
- @param presenting Whether the view controller is being presented or dismissed
- @return The initialized instance
- */
-- (instancetype)initWithDirection:(KSOSlidingAnimationControllerDirection)direction presenting:(BOOL)presenting NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithZoomView:(UIView *)zoomView presenting:(BOOL)presenting NS_DESIGNATED_INITIALIZER;
 
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
 
 @end
+
+NS_ASSUME_NONNULL_END

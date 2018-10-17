@@ -18,6 +18,9 @@
 		07AA77012176DC9F00AAB3D8 /* KSOVerticalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AA76FF2176DC9F00AAB3D8 /* KSOVerticalSwipeInteractionController.m */; };
 		07AA77042176E00500AAB3D8 /* KSOPinchInteractionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 07AA77022176E00500AAB3D8 /* KSOPinchInteractionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07AA77052176E00500AAB3D8 /* KSOPinchInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AA77032176E00500AAB3D8 /* KSOPinchInteractionController.m */; };
+		07AA77082176ED6400AAB3D8 /* KSOZoomAnimationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 07AA77062176ED6400AAB3D8 /* KSOZoomAnimationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07AA77092176ED6400AAB3D8 /* KSOZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AA77072176ED6400AAB3D8 /* KSOZoomAnimationController.m */; };
+		07AA770C2176EE2900AAB3D8 /* ZoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AA770B2176EE2900AAB3D8 /* ZoomViewController.m */; };
 		07B1468F2176C57D00EE41C8 /* KSOHorizontalSwipeInteractionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B1468D2176C57D00EE41C8 /* KSOHorizontalSwipeInteractionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07B146902176C57D00EE41C8 /* KSOHorizontalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B1468E2176C57D00EE41C8 /* KSOHorizontalSwipeInteractionController.m */; };
 		07B503B61F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B503B41F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -88,6 +91,10 @@
 		07AA76FF2176DC9F00AAB3D8 /* KSOVerticalSwipeInteractionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSOVerticalSwipeInteractionController.m; sourceTree = "<group>"; };
 		07AA77022176E00500AAB3D8 /* KSOPinchInteractionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSOPinchInteractionController.h; sourceTree = "<group>"; };
 		07AA77032176E00500AAB3D8 /* KSOPinchInteractionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSOPinchInteractionController.m; sourceTree = "<group>"; };
+		07AA77062176ED6400AAB3D8 /* KSOZoomAnimationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSOZoomAnimationController.h; sourceTree = "<group>"; };
+		07AA77072176ED6400AAB3D8 /* KSOZoomAnimationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSOZoomAnimationController.m; sourceTree = "<group>"; };
+		07AA770A2176EE2900AAB3D8 /* ZoomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZoomViewController.h; sourceTree = "<group>"; };
+		07AA770B2176EE2900AAB3D8 /* ZoomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZoomViewController.m; sourceTree = "<group>"; };
 		07B1468D2176C57D00EE41C8 /* KSOHorizontalSwipeInteractionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSOHorizontalSwipeInteractionController.h; sourceTree = "<group>"; };
 		07B1468E2176C57D00EE41C8 /* KSOHorizontalSwipeInteractionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSOHorizontalSwipeInteractionController.m; sourceTree = "<group>"; };
 		07B503B41F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+KSOAnimationPrivateExtensions.h"; sourceTree = "<group>"; };
@@ -189,6 +196,8 @@
 				079CA9991F48D3FB009E4690 /* KSODimmingOverlayPresentationController.m */,
 				079CA99A1F48D3FB009E4690 /* KSOSlidingAnimationController.h */,
 				079CA99B1F48D3FB009E4690 /* KSOSlidingAnimationController.m */,
+				07AA77062176ED6400AAB3D8 /* KSOZoomAnimationController.h */,
+				07AA77072176ED6400AAB3D8 /* KSOZoomAnimationController.m */,
 				07CEA8E32176CF5600945962 /* KSOAnimationInteractionController.h */,
 				07CEA8E42176CF5600945962 /* KSOAnimationInteractionController.m */,
 				07B1468D2176C57D00EE41C8 /* KSOHorizontalSwipeInteractionController.h */,
@@ -234,6 +243,8 @@
 				07D9891B1F48DA2500C2FA12 /* ViewController.h */,
 				07D9891C1F48DA2500C2FA12 /* ViewController.m */,
 				07D989351F48DE0700C2FA12 /* DetailViewController.h */,
+				07AA770A2176EE2900AAB3D8 /* ZoomViewController.h */,
+				07AA770B2176EE2900AAB3D8 /* ZoomViewController.m */,
 				07D989321F48DCE000C2FA12 /* SlidingOverlayViewController.h */,
 				07D989331F48DCE000C2FA12 /* SlidingOverlayViewController.m */,
 				07D989361F48E06500C2FA12 /* SlidingOverlayViewController.xib */,
@@ -269,6 +280,7 @@
 				07B1468F2176C57D00EE41C8 /* KSOHorizontalSwipeInteractionController.h in Headers */,
 				07CEA8E92176D12200945962 /* KSOAnimationInteractionController+KSOAnimationSubclassExtensions.h in Headers */,
 				079CA99C1F48D3FB009E4690 /* KSODimmingOverlayPresentationController.h in Headers */,
+				07AA77082176ED6400AAB3D8 /* KSOZoomAnimationController.h in Headers */,
 				079CA98F1F48D254009E4690 /* KSOAnimation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +429,7 @@
 				079CA99F1F48D3FB009E4690 /* KSOSlidingAnimationController.m in Sources */,
 				07B503B71F8E9E3400EEDA0F /* NSBundle+KSOAnimationPrivateExtensions.m in Sources */,
 				07AA77012176DC9F00AAB3D8 /* KSOVerticalSwipeInteractionController.m in Sources */,
+				07AA77092176ED6400AAB3D8 /* KSOZoomAnimationController.m in Sources */,
 				07CEA8E22176CEDA00945962 /* UIViewController+KSOAnimationExtensions.m in Sources */,
 				079CA99D1F48D3FB009E4690 /* KSODimmingOverlayPresentationController.m in Sources */,
 				07AA77052176E00500AAB3D8 /* KSOPinchInteractionController.m in Sources */,
@@ -433,6 +446,7 @@
 				07D9891D1F48DA2500C2FA12 /* ViewController.m in Sources */,
 				07D9891A1F48DA2500C2FA12 /* AppDelegate.m in Sources */,
 				07D989171F48DA2500C2FA12 /* main.m in Sources */,
+				07AA770C2176EE2900AAB3D8 /* ZoomViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
