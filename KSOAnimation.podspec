@@ -40,5 +40,5 @@ KSOAnimation is a collection of animations and transitions that extend the `UIKi
 
   s.ios.frameworks = 'UIKit'
   
-  s.dependency 'Stanley'
+  s.dependency 'Ditko', '~> 3.0'
 end
