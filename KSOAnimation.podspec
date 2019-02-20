@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KSOAnimation'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'KSOAnimation is a collection of animations and transitions that extend the UIKit framework.'
 
 # This description is used to generate tags and improve search results.
